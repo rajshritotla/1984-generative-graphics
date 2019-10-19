@@ -1,0 +1,1 @@
+Folder to for experimental code that uses OpenPose to get back estimatated position data from webcame movements. Source code from https://github.com/nishagandhi/OpenPose_PythonOpenCV
