@@ -4,7 +4,7 @@ This project involves combining conventional projection mapping technology in co
 
 # Technologies Used
 
-### openpose
+## openpose
 
 Source: https://github.com/CMU-Perceptual-Computing-Lab/openpose
 
@@ -12,7 +12,7 @@ openpose is used in the project to determine the human being coordinates. Curren
 
 Note: Though the links are directly sourced from openpose official repository, its suggestable to confirm the link again from openpose docs
 
-##### Get coordinates using openpose
+#### Get coordinates using openpose
 
 Assumption : openpose and dependencies successfully installed
 
@@ -33,14 +33,14 @@ Note: This is not a mandatory flag, but due to GPU and drivers constraints this 
 
 -write_json output/ : It will write the coordinates in JSON format in a folder name as "output". Folder name could be any name, not required specifically to be "output". There is one JSON file generated for every frame.
 
-##### openpose installtions Prerequisite
+#### openpose installtions Prerequisite
 
 ```
 https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/prerequisites.md
 ```
 
 
-##### openpose Installation Requirement and Procedure (Windows OS)
+#### openpose Installation Requirement and Procedure (Windows OS)
 
 For whole procedure and other OS visit their github documentation:
 
@@ -61,7 +61,7 @@ CMAke
 Visual Studio 2017
 
 
-###### OpenPose Binary File Generation Overview (Windows OS)
+#### OpenPose Binary File Generation Overview (Windows OS)
 
 Assuming the required drivers are installed and CUDA/cuDNN driver files are manually placed at correct location as specified in openpose docs; CMake and VS2017 are installed.
 

@@ -1,7 +1,7 @@
 Here, we will be posting the problems and the solutions we had during different phrases of the project.
 Also some notes which could be helpful to resolve the issues that arise while working with this project/application.
 
-###### Issues faced (Windows)
+### Issues faced (Windows)
 
 1. During openpose installation, in GENERATE step, windows or .dll files missing. 
 
