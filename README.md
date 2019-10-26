@@ -113,24 +113,25 @@ E.g. "c comp" is incorrect, "ccomp" is correct
 
 #### IDE 
 
-Visual Studio
+Visual Studio Code
 
 
 #### Configure VS Code and mingw compiler
 
-To run C++ scipts, every project we need to do configuration. Link for same is:
+To run C++ scipts, every project we need to do configuration. 
 
-https://code.visualstudio.com/docs/cpp/config-mingw
+Link for same is: https://code.visualstudio.com/docs/cpp/config-mingw
+
 
 
 ## Additional Header Files for C++
 
-### JSON
+## JSON
 
 Openpose output coordinates are in JSON format, to read we need JSON support.
 
 
-Add additional files to C++ compiler at location:
+Add additional files to C++ compiler at location: 
 
 ..\cppcompiler\mingw64\include\json
 
@@ -144,3 +145,19 @@ You need only "json" directory, download/clone repository and copy it into the c
 
 
 To learn more visit : http://json.org/
+
+
+
+## timercpp
+
+To read the new file generated with per frame, this header will help read the file in the fixed frame change interval.
+
+Source : https://github.com/99xt/timercpp
+
+
+Clone/Download the repository and save it in include directory.
+
+
+Add "timercpp" directory having additional files to C++ compiler at location:
+
+..\cppcompiler\mingw64\include\timercpp
