@@ -88,3 +88,59 @@ Note: Platform selected by me : x64
 
 Assuming it opens in VS 2017, choose "Release" [instead Debug on top bar (where there are options for run)] and hit green button.
 
+
+
+#### C++ compiler
+
+For this project using the compiler from
+
+MingW-W64-builds : http://mingw-w64.org/doku.php/download/mingw-builds
+
+
+Note: 
+
+
+1. Install compiler at a location where path does not have any spaces 
+
+E.g. "c comp" is incorrect, "ccomp" is correct
+
+
+2. Install the version as per your machine. Few options to take care are choosing options having x86_6, win32,seh-rt as they are using Win32 threads and SEH exception handling
+
+
+3. Do add compiler's bin path to environment
+
+
+#### IDE 
+
+Visual Studio
+
+
+#### Configure VS Code and mingw compiler
+
+To run C++ scipts, every project we need to do configuration. Link for same is:
+
+https://code.visualstudio.com/docs/cpp/config-mingw
+
+
+## Additional Header Files for C++
+
+### JSON
+
+Openpose output coordinates are in JSON format, to read we need JSON support.
+
+
+Add additional files to C++ compiler at location:
+
+..\cppcompiler\mingw64\include\json
+
+
+Directory "json" with required header files could be downloaded from:
+
+https://github.com/open-source-parsers/jsoncpp/tree/master/include 
+
+
+You need only "json" directory, download/clone repository and copy it into the compiler "include" directory.
+
+
+To learn more visit : http://json.org/
