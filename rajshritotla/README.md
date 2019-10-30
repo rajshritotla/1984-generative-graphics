@@ -148,16 +148,3 @@ To learn more visit : http://json.org/
 
 
 
-## timercpp
-
-To read the new file generated with per frame, this header will help read the file in the fixed frame change interval.
-
-Source : https://github.com/99xt/timercpp
-
-
-Clone/Download the repository and save it in include directory.
-
-
-Add "timercpp" directory having additional files to C++ compiler at location:
-
-..\cppcompiler\mingw64\include\timercpp
