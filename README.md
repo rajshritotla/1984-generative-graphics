@@ -90,6 +90,13 @@ Assuming it opens in VS 2017, choose "Release" [instead Debug on top bar (where 
 
 
 
+## C++
+
+Primary language used to develop this project is C++. 	
+
+As most of the frameworks used in project are devleoped in C++, compatibility issues could be avoided by using C++.
+
+
 #### C++ compiler
 
 For this project using the compiler from
@@ -148,16 +155,3 @@ To learn more visit : http://json.org/
 
 
 
-## timercpp
-
-To read the new file generated with per frame, this header will help read the file in the fixed frame change interval.
-
-Source : https://github.com/99xt/timercpp
-
-
-Clone/Download the repository and save it in include directory.
-
-
-Add "timercpp" directory having additional files to C++ compiler at location:
-
-..\cppcompiler\mingw64\include\timercpp
