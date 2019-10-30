@@ -9,4 +9,9 @@
 a.out
 .output
 
-openpose
+# directory too big to upload
+openpose 
+
+# executable files not currently required to be uploaded
+# generated in windows on compiling C++ code
+*.exe
