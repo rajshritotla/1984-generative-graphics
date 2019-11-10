@@ -21,11 +21,29 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    
+    //setting up the gui
     ofxPanel gui;
     
-    ofxIntSlider intSlider;
-    ofxFloatSlider floatSlider;
-    ofxToggle toggle;
-    ofxButton button;
+    //setting the positions of the object
+    ofxIntSlider xPos;
+    ofxIntSlider yPos;
+    ofxIntSlider radius;
+    
+    //setting the colors of the object
+    ofxIntSlider red;
+    ofxIntSlider green;
+    ofxIntSlider blue;
+    
+    //setting the rotation of the object
+    ofParameter<float> rotateX;
+    ofParameter<float> rotateY;
+    ofParameter<float> rotateZ;
+    ofParameter<float> speed;
+    
+    float rotationX;
+    float rotationY;
+    float rotationZ;
+
 		
 };
