@@ -20,17 +20,24 @@
 #include <conio.h>
 #include <fstream>
 
-#include <ghc/filesystem.hpp>       // alternative to C++ filesystem
+/** SOURCE: https://github.com/gulrak/filesystem/ */
+// alternative to C++ filesystem
+#include <ghc/filesystem.hpp>       
 namespace fs = ghc::filesystem;
 
 #include <iostream>
 #include <math.h>
 
-#include <nlohmann/json.hpp>        // to read json
+/** SOURCE: https://github.com/nlohmann/json */
+/** SOURCE: https://nlohmann.github.io/json/ */
+// to read json
+#include <nlohmann/json.hpp>        
 using json = nlohmann::json;
 
 #include <string.h>
-#include <unistd.h>                 // for sleep()
+
+// for sleep()
+#include <unistd.h>                 
 
 using namespace std;
 
