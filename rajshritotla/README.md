@@ -27,7 +27,7 @@ Through command line interface run the application with flags set as:
 
 
 ```
-../OpenPoseDemo.exe --model_pose COCO -write_json output/
+../OpenPoseDemo.exe --model_pose COCO -write_json output/ --disable_blending --display 0
 ```
 
 
@@ -36,11 +36,19 @@ OpenPoseDemo.exe : The application which generates the coordinates
 
 --model_pose COCO : Speicifies to run COCO model
 
-
 Note: This is not a mandatory flag, but due to GPU and drivers constraints this flag was required. One could try without this flag if it doesn't run then they can use this flag. To know more about this read the documentation on openpose github link.
 
 
 -write_json output/ : It will write the coordinates in JSON format in a folder name as "output". Folder name could be any name, not required specifically to be "output". There is one JSON file generated for every frame.
+
+
+--disable_blending: If enabled, it will render the results (keypoint skeletons or heatmaps) on a black background, not showing the original image. Related: part_to_show, alpha_pose, and alpha_pose.
+
+
+--display 0: Display window not opened. Useful for servers and/or to slightly speed up OpenPose.
+
+Source and to learn more about flag : https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/demo_overview.md#main-flags
+
 
 
 #### openpose Installations Prerequisite
