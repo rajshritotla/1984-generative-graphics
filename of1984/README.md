@@ -1,2 +1,10 @@
-# 1984-generative-graphics
-This project involves combining conventional projection mapping technology in combination with generative-computer graphics and computational vision, in order to create a completely fluid and projected environment for actors in plays. Student teams will work to develop a desktop application for the streamlining of generative graphics creation -- essentially a User Interface tool that will be used to extend an extant Unity project which currently uses a Microsoft Kinect sensor to track actor movements on stage and generate graphics to augment the scene or actually create entirely new interactive environments. A primary goal for this novel software tool is that it allows for the quick alteration of perimeters in generative algorithms, enabling theatrical scenic designers to edit and design in real time during rehearsal, thus creating the conditions for a more fully integrated and collaborative design process with the director, actors, and other designers. 
+# OPENFRAMEWORKS
+Code for generating custom generative graphics. Written in C++ using OpenFramworks
+## Source code 
+Most of the source code that I used came from [Lewis Lepton's](https://www.youtube.com/channel/UC8Wzk_R1GoPkPqLo-obU_kQ) two tutorial on OpenFramworks. The first one is [here](https://www.youtube.com/watch?v=dwt2NAd1ZYY&list=PL4neAtv21WOlqpDzGqbGM_WN2hc5ZaVv7) and the second one is [here](https://www.youtube.com/watch?v=IKSTo_0pB28&list=PL4neAtv21WOmrV8z9rSzL20QpdLU1zJLr). The source code for all these tutorial are [here](https://github.com/lewislepton/openFrameworksTutorialSeries).
+ 
+ ## DEPENDENCIES
+ OpenFramworks - [website](https://openframeworks.cc)
+ 
+ ## SETUP
+ 1. Install OpenFramworks - [instructions](https://openframeworks.cc/download/). For OSX users, download the nightlyupdate version, as this allows you to use OF without having the trouble on configuring the certificates and code signing.
