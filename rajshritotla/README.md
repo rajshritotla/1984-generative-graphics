@@ -90,13 +90,6 @@ Assuming it opens in VS 2017, choose "Release" [instead Debug on top bar (where 
 
 
 
-## C++
-
-Primary language used to develop this project is C++. 	
-
-As most of the frameworks used in project are devleoped in C++, compatibility issues could be avoided by using C++.
-
-
 #### C++ compiler
 
 For this project using the compiler from

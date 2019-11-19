@@ -8,3 +8,10 @@
 .output 03-36-55-641
 a.out
 .output
+
+# directory too big to upload
+openpose 
+
+# executable files not currently required to be uploaded
+# generated in windows on compiling C++ code
+*.exe
