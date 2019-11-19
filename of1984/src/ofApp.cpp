@@ -2,8 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofBackground(120);
-    ofSetFrameRate(60);
+//    ofBackground(120);
+//    ofSetFrameRate(60);
     
     gui.setup();
     //set up of the gui and parameters
@@ -16,7 +16,7 @@ void ofApp::setup(){
     gui.add(blue.setup("blue", 255, 0, 255));
     gui.add(rotateX.set("xRotate", 0.0,0.0 , 9.0));
     gui.add(rotateY.set("yRotate", 0.0, 0.0, 9.0));
-    gui.add(rotateZ.set("zRotate", 0.0, 0.0, 9.0));
+//    gui.add(rotateZ.set("zRotate", 0.0, 0.0, 9.0));
     //speed of rotation
     gui.add(speed.set("speed", 0.01, 0.0, 5.0));
     
