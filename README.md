@@ -22,7 +22,9 @@ Through command line interface run the application with flags set as:
 
 
 ```
-../OpenPoseDemo.exe --model_pose COCO -write_json output/
+
+../OpenPoseDemo.exe --model_pose COCO -write_json output/ --disable_blending
+
 ```
 
 OpenPoseDemo.exe : The application which generates the coordinates
@@ -138,20 +140,32 @@ Link for same is: https://code.visualstudio.com/docs/cpp/config-mingw
 Openpose output coordinates are in JSON format, to read we need JSON support.
 
 
-Add additional files to C++ compiler at location: 
+STEPS:
+1. Add additional files to C++ compiler at location: ..\cppcompiler\mingw64\include\
 
-..\cppcompiler\mingw64\include\json
+2. Create directory with name "nlohmann"
+
+3. Download the files from GitHub to this directory. Currently it have contents ( detail, thirdparty, adl_serializer.hpp, json.hpp, json_fwd.hpp)
 
 
 Directory "json" with required header files could be downloaded from:
 
-https://github.com/open-source-parsers/jsoncpp/tree/master/include 
+https://github.com/nlohmann/json/tree/develop/include/
+
+Note: Though this repository says only to include one header file but you may need to include whole directory contents.
 
 
-You need only "json" directory, download/clone repository and copy it into the compiler "include" directory.
+To learn more about JSON visit : http://json.org/
 
 
-To learn more visit : http://json.org/
+## filesystem (Alternative)
 
+C++ have an experimental header file to handle files known as "filesystem". Some issues were encountered using this so we used an alternate library which could be downloaded from following github repository:
+
+https://github.com/gulrak/filesystem/
+
+
+STEPS:
+Add additional directory "ghc" downloaded from to C++ compiler at location: ..\cppcompiler\mingw64\include\
 
 
