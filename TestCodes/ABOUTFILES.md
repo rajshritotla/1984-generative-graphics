@@ -1,6 +1,6 @@
 Purpose of the files
 
-## Experiment Code Directory
+## TestCodes Code Directory
 
 TestCommandLineReadRun
 
