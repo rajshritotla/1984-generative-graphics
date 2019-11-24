@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "ofxGui.h"
+#include "webcam.hpp"
+#include "shape.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -23,28 +25,9 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     //setting up the gui
-    ofxPanel gui;
     
-    //setting the positions of the object
-    ofxIntSlider xPos;
-    ofxIntSlider yPos;
-    ofxIntSlider zPos;
-    ofxIntSlider radius;
     
-    //setting the colors of the object
-    ofxIntSlider red;
-    ofxIntSlider green;
-    ofxIntSlider blue;
-    
-    //setting the rotation of the object
-    ofParameter<float> rotateX;
-    ofParameter<float> rotateY;
-    ofParameter<float> rotateZ;
-    ofParameter<float> speed;
-    
-    float rotationX;
-    float rotationY;
-    float rotationZ;
-
+    webcam wc;
+    shape s;
 		
 };

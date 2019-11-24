@@ -1,5 +1,7 @@
 #include "ofMain.h"
 #include "ofApp.h"
+#include "webcam.hpp"
+#include "shape.hpp"
 
 //========================================================================
 int main( ){
