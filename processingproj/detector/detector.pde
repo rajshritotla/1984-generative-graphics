@@ -49,7 +49,6 @@ void draw() {
   }
    if (isHandMovementDetectorWindowCreated == true && didUserChooseMovementDetectorType == true) {
      //adds graphics to the drawing pad
-  myGraphic.move();
   myGraphic.display(); 
       
   }
@@ -75,11 +74,11 @@ class Graphic {
   void display() {
     fill(255);
     noStroke();
-    ellipse(25,25,25,25);
+    background(0);
+    ellipse(xPos,yPos,25,25);
   }
   
-  void move() {    
-   }
+  
 }
 import gab.opencv.*;
 import processing.video.*;
@@ -96,7 +95,7 @@ public class HandMovementDetector extends PApplet {
   void setup() {     
     video = new Capture(this, 640/2, 480/2); 
     opencv = new OpenCV(this, 640/2, 480/2);
-    opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);    //initally detecting face
+    opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);    //initally detecting face, will add more
     video.start();
   }
 
@@ -111,9 +110,9 @@ public class HandMovementDetector extends PApplet {
     strokeWeight(3);
     Rectangle[] faces = opencv.detect(); //rectangle to detect faces
     for (int i = 0; i < faces.length; i++) {
-      //printing coordinates of the faces
-      println(faces[i].x + "," + faces[i].y);
       rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height); //laying rectangles on to faces
+      xPos = faces[i].x; //changing x coordinates of ellipses
+      yPos = faces[i].x; //changing y coordinates of ellipses
     }
   }
   void captureEvent(Capture c) {
@@ -143,27 +142,52 @@ public class Menu_bar {
     frame.setJMenuBar(menu_bar);
     // Define and add two drop down menu to the menubar
     JMenu import_menu = new JMenu("import");
-    JMenu text_menu = new JMenu("text");
-    JMenu shape_menu = new JMenu("shape");
-    JMenu image_menu = new JMenu("image");
-    JMenu video_menu = new JMenu("video");
+    JMenu template_menu  = new JMenu("templates");
+    JMenu detect_menu = new JMenu("detect");
+    JMenu save_menu = new JMenu("save");
+    JMenu exit_menu = new JMenu("Exit");
+    
 
     menu_bar.add(import_menu);
-    menu_bar.add(text_menu);
-    menu_bar.add(shape_menu);
-    menu_bar.add(image_menu);
-    menu_bar.add(video_menu);
+    menu_bar.add(detect_menu);
+    menu_bar.add(save_menu);
+    menu_bar.add(template_menu);
+    menu_bar.add(exit_menu);
 
     // Create and add simple menu item to one of the drop down menu
     JMenuItem new_file = new JMenuItem("Import file");
     JMenuItem new_folder = new JMenuItem("Import folder");
-    JMenuItem action_exit = new JMenuItem("Exit");
+    
+    JMenuItem save = new JMenuItem("Save");
+    JMenuItem save_as = new JMenuItem("Save As");
+    
+    JMenuItem ellipse = new JMenuItem("ellipse");
+    JMenuItem rectangle = new JMenuItem("rectange");
+    
+    JMenu move_one_object = new JMenu("move one object");
+    JMenu move_background = new JMenu("move background");
+    
+    JMenuItem detect_face = new JMenuItem("face");
+    JMenuItem detect_body = new JMenuItem("body");
+    JMenuItem detect_hands = new JMenuItem("hands");
 
     import_menu.add(new_file);
     import_menu.add(new_folder);
-    import_menu.addSeparator();
-    import_menu.add(action_exit);
-
+    
+    save_menu.add(save);
+    save_menu.add(save_as);
+    
+    move_one_object.add(ellipse);
+    move_one_object.add(rectangle);
+    
+    template_menu.add(move_one_object);
+    template_menu.add(move_background);
+    
+    detect_menu.add(detect_face);
+    detect_menu.add(detect_body);
+    detect_menu.add(detect_hands);
+   
+   
     // Add a listener to the New menu item. actionPerformed() method will
     // invoked, if user triggred this menu item
     new_file.addActionListener(new ActionListener() {
