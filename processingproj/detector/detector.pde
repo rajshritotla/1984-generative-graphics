@@ -1,22 +1,30 @@
+import controlP5.*;
 import java.awt.*;
 
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
-
+PShape square;
 Graphic myGraphic; //graphic instance
 Menu_bar mp; //menu bar instance
 float xPos; // x position of Graphic
 float yPos; // y position of Graphic
-
+float shape_color_r;
+float shape_color_b;
+float shape_color_g;
 
 boolean didUserChooseMovementDetectorType =false; //has the user chosen a thing to detect
 boolean didUserStart = false; //has the user started the application yet
 
+ControlP5 controlP5;
 void setup() {  
   //setting up the main app
   smooth();
   noStroke();
-  myGraphic = new Graphic(50,530);
+  myGraphic = new Graphic(50,530,255,255,255);
   buildMenuBar();
+  controlP5 = new ControlP5(this);
+  controlP5.addSlider("slider_r",0,255,128,70,80,100,10);
+  controlP5.addSlider("slider_g",0,255,128,70,80,100,10);
+  controlP5.addSlider("slider_b",0,255,128,70,80,100,10);
     
 }
 
@@ -50,6 +58,7 @@ void draw() {
    if (isHandMovementDetectorWindowCreated == true && didUserChooseMovementDetectorType == true) {
      //adds graphics to the drawing pad
   myGraphic.display(); 
+  
       
   }
 }
@@ -60,22 +69,60 @@ void keyPressed() {
     didUserStart = true;
 }
 
+void controlEvent(ControlEvent theEvent) {
+  /* events triggered by controllers are automatically forwarded to 
+     the controlEvent method. by checking the name of a controller one can 
+     distinguish which of the controllers has been changed.
+  */ 
+ 
+  /* check if the event is from a controller otherwise you'll get an error
+     when clicking other interface elements like Radiobutton that don't support
+     the controller() methods
+  */
+  
+  if(theEvent.isController()) { 
+    
+    print("control event from : "+theEvent.getController().getName());
+    println(", value : "+theEvent.getController().getValue());
+    
+    
+    if(theEvent.getController().getName()=="slider_r") {
+      shape_color_r = theEvent.getController().getValue();
+    }
+    
+    if(theEvent.getController().getName()=="slider_g") {
+      shape_color_g = theEvent.getController().getValue();
+    }
+    
+    if(theEvent.getController().getName()=="slider_b") {
+      shape_color_b = theEvent.getController().getValue();
+    }
+    
+    
+  }  
+}
+
 //GRAPHIC CLASS
 class Graphic {
   float speed = 2;
   boolean moveLeft, moveRight, moveUp, moveDown = false;
  
-  Graphic(float x_in, float y_in) {
+  Graphic(float x_in, float y_in,float r_color_in, float g_color_in,float b_color_in) {
     //constructor for the graphic
     xPos = x_in;
     yPos = y_in; 
+    shape_color_r = r_color_in;
+    shape_color_g = g_color_in;
+    shape_color_b = b_color_in;
   }
  
   void display() {
-    fill(255);
     noStroke();
     background(0);
-    ellipse(xPos,yPos,25,25);
+    //ellipse(xPos,yPos,25,25);
+    square = createShape(RECT, xPos, yPos, 80, 80);
+    square.setFill(color(shape_color_r, shape_color_g,shape_color_b));
+    shape(square, 10, 10);
   }
   
   
