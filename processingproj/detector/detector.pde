@@ -22,9 +22,9 @@ void setup() {
   myGraphic = new Graphic(50,530,255,255,255);
   buildMenuBar();
   controlP5 = new ControlP5(this);
-  controlP5.addSlider("slider_r",0,255,128,70,80,100,10);
-  controlP5.addSlider("slider_g",0,255,128,70,80,100,10);
-  controlP5.addSlider("slider_b",0,255,128,70,80,100,10);
+  controlP5.addSlider("slider_r",0,255,128,70,80,100,10); //slider for red
+  controlP5.addSlider("slider_g",0,255,128,70,80,100,10); //slider for green
+  controlP5.addSlider("slider_b",0,255,128,70,80,100,10); //slider for blue
     
 }
 
@@ -80,7 +80,7 @@ void controlEvent(ControlEvent theEvent) {
      the controller() methods
   */
   
-  if(theEvent.isController()) { 
+  if(theEvent.isController()) { //triggers events from slider
     
     print("control event from : "+theEvent.getController().getName());
     println(", value : "+theEvent.getController().getValue());
