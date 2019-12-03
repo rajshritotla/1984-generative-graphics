@@ -10,11 +10,12 @@ float yPos; // y position of Graphic
 float shape_color_r;
 float shape_color_b;
 float shape_color_g;
+float xRot;
+float yRot;
 
 boolean didUserChooseMovementDetectorType =false; //has the user chosen a thing to detect
 boolean didUserStart = false; //has the user started the application yet
 
-ControlP5 controlP5;
 void setup() {  
   //setting up the main app
   smooth();
@@ -25,7 +26,7 @@ void setup() {
   //controlP5.addSlider("slider_g").setPosition(20,130).setRange(0,255).setValue(100);//slider for green
   //controlP5.addSlider("slider_b").setPosition(20,160).setRange(0,255).setValue(100); //slider for blue
   String[] args = {"ThreeFrameTest"};
-  menu_window
+  menu_window mw = new menu_window();
   PApplet.runSketch(args, mw);
 }
 
@@ -59,36 +60,8 @@ void draw() {
   }
 }
 
-//KEYBOA
-
-void controlEvent(ControlEvent theEvent) {
-  /* events triggered by controllers are automatically forwarolEvent theEvent) {
-  /* events triggered by controllers are automatically forwarded to 
-     the controlEvent method. by checking the name of a controller one can 
-     distinguish which of the controllers has been changed.
-  */ 
- 
-  /* check if the event is from a controller otherwise you'll get an error
-     when clicking other interface elements like Radiobutton that don't support
-     the controller() methods
-  */
-  
-  if(theEvent.isController()) { 
-    
-    print("control event from : "+theEvent.getController().getName());
-    println(", value : "+theEvent.getController().getValue());
-    
-    
-    if(theEvent.getController().getName()=="slider_r") {
-      shape_color_r = theEvent.getController().getValue();
-    }
-    
-    if(theEvent.getController().getName()=="slider_g") {
-      shape_color_g = theEvent.getController().getValue();
-    }
-    
-    if(theEvent.getController().getName()=="slider_b") {
-      shape_color_b = theEvent.getController().getValue();
-    }
-  }  
+//KEYBOARD INPUT
+void keyPressed() {
+ //when uses presses a key
+    didUserStart = true;
 }

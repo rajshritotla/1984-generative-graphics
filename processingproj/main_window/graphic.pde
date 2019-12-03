@@ -41,6 +41,8 @@ class Graphic {
     square = createShape(RECT, xPos, yPos, 80, 80);
     square.setFill(color(shape_color_r, shape_color_g,shape_color_b));
     shape(square, 10, 10);
+    square.rotateX(xRot);
+    square.rotateY(yRot);
   }
   
   
