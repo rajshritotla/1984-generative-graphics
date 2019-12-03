@@ -1,7 +1,7 @@
 
 import controlP5.*;
 import java.awt.*;
-
+detector_window movement;
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
 PShape square;
 Graphic myGraphic; //graphic instance
@@ -46,10 +46,11 @@ void draw() {
   
   if ( didUserStart == true && didUserChooseMovementDetectorType == false) { 
     //initated the camera
-    String[] args = {"TwoFrameTest"};
-    HandMovementDetector sa = new HandMovementDetector();
-    PApplet.runSketch(args, sa);
-    didUserChooseMovementDetectorType=true;    
+    //String[] args = {"TwoFrameTest"};
+    //HandMovementDetector sa = new HandMovementDetector();
+    //PApplet.runSketch(args, sa);
+    //didUserChooseMovementDetectorType=true;    
+    
   }
   if(isHandMovementDetectorWindowCreated == false && didUserChooseMovementDetectorType ==true) {
     //initates the drawing pad
@@ -151,45 +152,45 @@ class Graphic {
   
   
 }
-import gab.opencv.*;
-import processing.video.*;
+//import gab.opencv.*;
+//import processing.video.*;
 
-public class HandMovementDetector extends PApplet {
+//public class HandMovementDetector extends PApplet {
 
-  Capture video;
-  OpenCV opencv;
+//  Capture video;
+//  OpenCV opencv;
 
-  public void settings() {
-    size(640, 480);
-  }
+//  public void settings() {
+//    size(640, 480);
+//  }
 
-  void setup() {     
-    video = new Capture(this, 640/2, 480/2); 
-    opencv = new OpenCV(this, 640/2, 480/2);
-    opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);    //initally detecting face, will add more
-    video.start();
-  }
+//  void setup() {     
+//    video = new Capture(this, 640/2, 480/2); 
+//    opencv = new OpenCV(this, 640/2, 480/2);
+//    opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);    //initally detecting face, will add more
+//    video.start();
+//  }
 
-  void draw() {
-    isHandMovementDetectorWindowCreated = true;    
-    surface.setLocation(0,50);
-    scale(2);
-    opencv.loadImage(video);
-    image(video, 0, 0 );
-    noFill();
-    stroke(0, 255, 0);
-    strokeWeight(3);
-    Rectangle[] faces = opencv.detect(); //rectangle to detect faces
-    for (int i = 0; i < faces.length; i++) {
-      rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height); //laying rectangles on to faces
-      xPos = faces[i].x; //changing x coordinates of ellipses
-      yPos = faces[i].x; //changing y coordinates of ellipses
-    }
-  }
-  void captureEvent(Capture c) {
-    c.read();
-  }
-}
+//  void draw() {
+//    isHandMovementDetectorWindowCreated = true;    
+//    surface.setLocation(0,50);
+//    scale(2);
+//    opencv.loadImage(video);
+//    image(video, 0, 0 );
+//    noFill();
+//    stroke(0, 255, 0);
+//    strokeWeight(3);
+//    Rectangle[] faces = opencv.detect(); //rectangle to detect faces
+//    for (int i = 0; i < faces.length; i++) {
+//      rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height); //laying rectangles on to faces
+//      xPos = faces[i].x; //changing x coordinates of ellipses
+//      yPos = faces[i].x; //changing y coordinates of ellipses
+//    }
+//  }
+//  void captureEvent(Capture c) {
+//    c.read();
+//  }
+//}
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
