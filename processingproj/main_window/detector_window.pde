@@ -6,13 +6,8 @@ public class detector_window extends PApplet {
   Capture video;
   OpenCV opencv;
   
-  detector_window()
-  {
-    super();
-    PApplet.runSketch(new String[] {this.getClass().getSimpleName()}, this);
-  }
   public void settings() {
-    size(640, 480);
+    size(640, 480, P3D);
   }
 
   void setup() {     
