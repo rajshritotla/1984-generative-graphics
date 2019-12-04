@@ -6,10 +6,12 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 //menubar
-public class Menu_bar {
+public class Menu_bar 
+{
   JFrame frame;
 
-  public Menu_bar(PApplet app, String name, int width, int height) {
+  public Menu_bar(PApplet app, String name)
+  {
     System.setProperty("apple.laf.useScreenMenuBar", "true");
     frame = (JFrame) ((processing.awt.PSurfaceAWT.SmoothCanvas)app.getSurface().getNative()).getFrame();
     frame.setTitle(name);
@@ -19,65 +21,63 @@ public class Menu_bar {
     // Add the menubar to the frame
     frame.setJMenuBar(menu_bar);
     // Define and add two drop down menu to the menubar
-    JMenu import_menu = new JMenu("import");
-    JMenu template_menu  = new JMenu("templates");
-    JMenu detect_menu = new JMenu("detect");
-    JMenu save_menu = new JMenu("save");
-    JMenu exit_menu = new JMenu("Exit");
+    JMenu import_menu = new JMenu("Import");
+    JMenu edit_menu  = new JMenu("Edit");
+    JMenu save_menu = new JMenu("Save");
+    JMenu  file_menu = new JMenu("File");
     
-
+    menu_bar.add(file_menu);
     menu_bar.add(import_menu);
-    menu_bar.add(detect_menu);
     menu_bar.add(save_menu);
-    menu_bar.add(template_menu);
-    menu_bar.add(exit_menu);
+    menu_bar.add(edit_menu);
 
     // Create and add simple menu item to one of the drop down menu
-    JMenuItem new_file = new JMenuItem("Import file");
-    JMenuItem new_folder = new JMenuItem("Import folder");
+    JMenuItem import_file = new JMenuItem("Import file");
+    JMenuItem import_folder = new JMenuItem("Import folder");
+    
+    JMenuItem exit = new JMenuItem("Exit");
+    JMenuItem open = new JMenuItem("Open");
+    JMenuItem new_file = new JMenuItem("New");
     
     JMenuItem save = new JMenuItem("Save");
     JMenuItem save_as = new JMenuItem("Save As");
     
-    JMenuItem ellipse = new JMenuItem("ellipse");
-    JMenuItem rectangle = new JMenuItem("rectange");
-    
-    JMenu move_one_object = new JMenu("move one object");
-    JMenu move_background = new JMenu("move background");
-    
-    JMenuItem detect_face = new JMenuItem("face");
-    JMenuItem detect_body = new JMenuItem("body");
-    JMenuItem detect_hands = new JMenuItem("hands");
+    JMenuItem undo = new JMenuItem("Undo");
+    JMenuItem redo = new JMenuItem("Redo");
+    JMenuItem cut = new JMenuItem("Cut");
+    JMenuItem copy = new JMenuItem("Copy");
+    JMenuItem paste = new JMenuItem("Paste");
 
-    import_menu.add(new_file);
-    import_menu.add(new_folder);
+    import_menu.add(import_file);
+    import_menu.add(import_folder);
     
     save_menu.add(save);
     save_menu.add(save_as);
     
-    move_one_object.add(ellipse);
-    move_one_object.add(rectangle);
+    edit_menu.add(undo);
+    edit_menu.add(redo);
+    edit_menu.add(cut);
+    edit_menu.add(copy);
+    edit_menu.add(paste);
     
-    template_menu.add(move_one_object);
-    template_menu.add(move_background);
     
-    detect_menu.add(detect_face);
-    detect_menu.add(detect_body);
-    detect_menu.add(detect_hands);
+    file_menu.add(new_file);
+    file_menu.add(open);
+    file_menu.add(exit);
+ 
    
-   
-    // Add a listener to the New menu item. actionPerformed() method will
+    // Add a listener to the exit_menu item. actionPerformed() method will
     // invoked, if user triggred this menu item
-    new_file.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent arg0) {
-        if (arg0.getActionCommand().equals("detect_face"))
-        {
-          
-        System.out.println("You have clicked on the new action");
+    exit.addActionListener(new ActionListener() 
+    {
+      public void actionPerformed(ActionEvent e) 
+      {
+        exit();
       }
     }
-    }
-    );
-    frame.setVisible(true);
+   );
+   
+   
+   frame.setVisible(true);
   }
 }
