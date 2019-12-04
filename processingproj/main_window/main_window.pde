@@ -3,8 +3,13 @@ import controlP5.*;
 import java.awt.*;
 //detector_window movement;
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
+<<<<<<< HEAD
+PShape square;
+twoDGraphic my2dGraphic; //graphic instance
+=======
 PShape shape;
 Graphic myGraphic; //graphic instance
+>>>>>>> a3655c90b31edf1fdae471add6b0e30a58bb44a7
 float xPos; // x position of Graphic
 float yPos; // y position of Graphic
 float zPos;
@@ -110,9 +115,15 @@ void draw() {
   }
    if (isHandMovementDetectorWindowCreated == true && didUserChooseMovementDetectorType == true) {
      //adds graphics to the drawing pad
+<<<<<<< HEAD
+     if (wants_twoD)
+     {
+       my2dGraphic.display();
+=======
      if (wants_twoD || wants_threeD)
      {
        myGraphic.display();
+>>>>>>> a3655c90b31edf1fdae471add6b0e30a58bb44a7
      }
   }
 }
@@ -175,38 +186,5 @@ void mousePressed()
   {
     type = BOX;
     hasUserChosenShape = true;
-  }
-}
-
-void mousePressed()
-{
-  if (face_detect_button.MouseIsOver()) {
-    // print some text to the console pane if the button is clicked
-    detect = "haarcascade_frontalface_alt.xml";
-  }
-  if (body_detect_button.MouseIsOver())
-  {
-    detect = "";
-  }
-  if (fist_detect_button.MouseIsOver())
-  {
-    detect = "fist.xml";
-  }
-  if (twoD_button.MouseIsOver())
-  {
-    wants_twoD = true;
-  }
-  if (threeD_button.MouseIsOver())
-  {
-    wants_threeD = true;
-  }
-  
-  if (circle_button.MouseIsOver())
-  {
-    type =  ELLIPSE;
-  }
-  if (rectangle_button.MouseIsOver())
-  {
-    type = RECT;
   }
 }

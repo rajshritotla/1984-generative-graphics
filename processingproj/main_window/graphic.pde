@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+class twoDGraphic {
+  float speed = 2;
+  boolean moveLeft, moveRight, moveUp, moveDown = false;
+ 
+  twoDGraphic(float x_in, float y_in,float r_color_in, float g_color_in,float b_color_in) {
+=======
 //graphic class
 
 class Graphic {
@@ -5,6 +12,7 @@ class Graphic {
   boolean moveLeft, moveRight, moveUp, moveDown = false;
  
   Graphic(float x_in, float y_in, float z_in, float r_color_in, float g_color_in,float b_color_in, float size_in) {
+>>>>>>> a3655c90b31edf1fdae471add6b0e30a58bb44a7
     //constructor for the graphic
     xPos = x_in;
     yPos = y_in; 
