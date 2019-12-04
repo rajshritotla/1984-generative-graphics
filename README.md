@@ -2,170 +2,42 @@
 This project involves combining conventional projection mapping technology in combination with generative-computer graphics and computational vision, in order to create a completely fluid and projected environment for actors in plays. Student teams will work to develop a desktop application for the streamlining of generative graphics creation -- essentially a User Interface tool that will be used to extend an extant Unity project which currently uses a Microsoft Kinect sensor to track actor movements on stage and generate graphics to augment the scene or actually create entirely new interactive environments. A primary goal for this novel software tool is that it allows for the quick alteration of perimeters in generative algorithms, enabling theatrical scenic designers to edit and design in real time during rehearsal, thus creating the conditions for a more fully integrated and collaborative design process with the director, actors, and other designers. 
 
 
-# Technologies Used
+# Technologies
+The application is now being developed using [Processing](https://processing.org/) software.
 
-## openpose
+[Download Processing](https://processing.org/download/)
 
-Source: https://github.com/CMU-Perceptual-Computing-Lab/openpose
+#### Why Processing? (source from website https://processing.org/)
 
-openpose is used in the project to determine the human being coordinates. Currently we are using it with webcam to successfully generate coordinates of using COCO model, which is a trained model available in repository.
+Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology. There are tens of thousands of students, artists, designers, researchers, and hobbyists who use Processing for learning and prototyping.
 
-Note: Though the links are directly sourced from openpose official repository, its suggestable to confirm the link again from openpose docs
+* Free to download and open source
+* Interactive programs with 2D, 3D, PDF, or SVG output
+* OpenGL integration for accelerated 2D and 3D
+* For GNU/Linux, Mac OS X, Windows, Android, and ARM
+* Over 100 libraries extend the core software
+* Well documented, with many books available
 
-#### Get coordinates using openpose
 
-Assumption : openpose and dependencies successfully installed
+#### Why we switched techology?
 
-To get coordinates using openpose:
+* Earlier approach had lot of dependencies thus lot of additional installations required
+* High hardware requirements
+* Complex to use and learn as compared to Processing
+* Compatability issue between opnepose and openframeworks
+* Processing is ready to use, one just need to download the application
 
-Through command line interface run the application with flags set as:
 
+#### Technologies Used in Old Code
+* [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
+* C++
+* [openframeowrks](https://openframeworks.cc/about/)
 
-```
+Code and documentation could be found in old directory
 
-../OpenPoseDemo.exe --model_pose COCO -write_json output/ --disable_blending
 
-```
+#### How to run
 
-OpenPoseDemo.exe : The application which generates the coordinates
-
---model_pose COCO : Speicifies to run COCO model
-
-Note: This is not a mandatory flag, but due to GPU and drivers constraints this flag was required. One could try without this flag if it doesn't run then they can use this flag. To know more about this read the documentation on openpose github link.
-
--write_json output/ : It will write the coordinates in JSON format in a folder name as "output". Folder name could be any name, not required specifically to be "output". There is one JSON file generated for every frame.
-
-#### openpose installtions Prerequisite
-
-```
-https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/prerequisites.md
-```
-
-
-#### openpose Installation Requirement and Procedure (Windows OS)
-
-For whole procedure and other OS visit their github documentation:
-
-https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/installation.md
-
-Windows OS users can directly download the binary files from "Release" section and try running the OpenPoseDemo.exe. They can also generate their own binary files using CMake.
-
-Installations done by us for Windows:
-
-NVIDIA driver updates
-
-Cuda Driver
-
-cuDNN
-
-CMAke
-
-Visual Studio 2017
-
-
-#### OpenPose Binary File Generation Overview (Windows OS)
-
-Assuming the required drivers are installed and CUDA/cuDNN driver files are manually placed at correct location as specified in openpose docs; CMake and VS2017 are installed.
-
-In CMake Gui:
-
-1. Where is the source code : Points to the openpose folder cloned by github:
-
-```
-git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose
-```
-
-
-2. Where to build the binaries : Points to a folder specified by you, in my case I named it as "build"
-
-3. Click Configure
-
-Note: Configuring done should be shown in last else there is some issue
-
-Note: Platform selected by me : x64
-
-4. Click Generate
-
-5. OpenProject
-
-Assuming it opens in VS 2017, choose "Release" [instead Debug on top bar (where there are options for run)] and hit green button.
-
-
-
-## C++
-
-Primary language used to develop this project is C++. 	
-
-As most of the frameworks used in project are devleoped in C++, compatibility issues could be avoided by using C++.
-
-
-#### C++ compiler
-
-For this project using the compiler from
-
-MingW-W64-builds : http://mingw-w64.org/doku.php/download/mingw-builds
-
-
-Note: 
-
-
-1. Install compiler at a location where path does not have any spaces 
-
-E.g. "c comp" is incorrect, "ccomp" is correct
-
-
-2. Install the version as per your machine. Few options to take care are choosing options having x86_6, win32,seh-rt as they are using Win32 threads and SEH exception handling
-
-
-3. Do add compiler's bin path to environment
-
-
-#### IDE 
-
-Visual Studio Code
-
-
-#### Configure VS Code and mingw compiler
-
-To run C++ scipts, every project we need to do configuration. 
-
-Link for same is: https://code.visualstudio.com/docs/cpp/config-mingw
-
-
-
-## Additional Header Files for C++
-
-## JSON
-
-Openpose output coordinates are in JSON format, to read we need JSON support.
-
-
-STEPS:
-1. Add additional files to C++ compiler at location: ..\cppcompiler\mingw64\include\
-
-2. Create directory with name "nlohmann"
-
-3. Download the files from GitHub to this directory. Currently it have contents ( detail, thirdparty, adl_serializer.hpp, json.hpp, json_fwd.hpp)
-
-
-Directory "json" with required header files could be downloaded from:
-
-https://github.com/nlohmann/json/tree/develop/include/
-
-Note: Though this repository says only to include one header file but you may need to include whole directory contents.
-
-
-To learn more about JSON visit : http://json.org/
-
-
-## filesystem (Alternative)
-
-C++ have an experimental header file to handle files known as "filesystem". Some issues were encountered using this so we used an alternate library which could be downloaded from following github repository:
-
-https://github.com/gulrak/filesystem/
-
-
-STEPS:
-Add additional directory "ghc" downloaded from to C++ compiler at location: ..\cppcompiler\mingw64\include\
+Double click the files with extension .pde in the directory "processingproj" and click the run/play (green) button when the file open in Processing Window. Code output and Graphics window will automatically start. 
 
 
