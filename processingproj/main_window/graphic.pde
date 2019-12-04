@@ -2,7 +2,7 @@
 class Graphic {
   float speed = 2;
   boolean moveLeft, moveRight, moveUp, moveDown = false;
- 
+  StartRaining startRaining; 
   Graphic(float x_in, float y_in, float z_in, float r_color_in, float g_color_in,float b_color_in, float size_in) {
     //constructor for the graphic
     xPos = x_in;
@@ -13,32 +13,73 @@ class Graphic {
     shape_color_b = b_color_in;
     size = size_in;
   }
- 
+  
+  void onStartRaining() {
+    // if user wants rain initialize the variable only in that case
+    // called when user chooses Rain button
+    startRaining = new StartRaining();
+  }
+  
   void display() {
-    noStroke();
-    background(0);
+    
+    /*_____________________________________________________ 2 D __________________________________________________________________*/
+    
     if (wants_twoD)
+    //2d shape creation
     {
+      noStroke();
+      background(0);
       shape = createShape(type, xPos, yPos, size, size);
       shape.setFill(color(shape_color_r, shape_color_g,shape_color_b));
       shape(shape, 10, 10);
       shape.rotateX(xRot);
       shape.rotateY(yRot);
     }
+    
+    
+    /*_____________________________________________________ 3 D __________________________________________________________________*/
+    
     if (wants_threeD)
     //3d shape creation
     {
-      directionalLight(shape_color_r, shape_color_g, shape_color_b, 0, -1, 0); //colored light for the 3d object
+      //directionalLight(shape_color_r, shape_color_g, shape_color_b, 0, -1, 0); //colored light for the 3d object
       if (type == BOX) //case if type of shape is box
       {
-        shape = createShape(type, size, size, size);
-        shape.translate(xPos, yPos, 50);
+        background(0);
+        lights();
+        noFill();
+        stroke(255);
+        pushMatrix();        
+        translate(xPos, yPos, 50);  
+        box(size/3);
+        popMatrix();
       }
       else if (type == SPHERE) //case if type of shape is sphere
       {
-        shape = createShape(type, size);
-        shape.translate(xPos, yPos, 50);
+        background(0);
+        lights();
+        noFill();
+        stroke(255);
+        pushMatrix();
+        translate(xPos, yPos, 50);  
+        sphere(size/3);
+        popMatrix();
       }
+
+    }
+    
+    /*_____________________________________________________ Rain Graphic __________________________________________________________________*/
+    
+    if(wants_rainGraphic) {
+    // wants RAIN graphic
+       startRaining.rain();
+       shape = createShape(RECT, xPos, yPos, size, height);
+       shape.setStroke(0);
+       shape.setFill(color(shape_color_r, shape_color_g,shape_color_b));  // Remove this line of code when projecting, only for DEMO
+       shape(shape);
     }
   }
+  
+  /*______________________________________________________________________________________________________________________________________*/
+    
 }
