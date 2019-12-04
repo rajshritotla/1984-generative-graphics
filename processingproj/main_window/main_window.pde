@@ -162,3 +162,36 @@ void mousePressed()
     }
   }
 }
+
+void mousePressed()
+{
+  if (face_detect_button.MouseIsOver()) {
+    // print some text to the console pane if the button is clicked
+    detect = "haarcascade_frontalface_alt.xml";
+  }
+  if (body_detect_button.MouseIsOver())
+  {
+    detect = "";
+  }
+  if (fist_detect_button.MouseIsOver())
+  {
+    detect = "fist.xml";
+  }
+  if (twoD_button.MouseIsOver())
+  {
+    wants_twoD = true;
+  }
+  if (threeD_button.MouseIsOver())
+  {
+    wants_threeD = true;
+  }
+  
+  if (circle_button.MouseIsOver())
+  {
+    type =  ELLIPSE;
+  }
+  if (rectangle_button.MouseIsOver())
+  {
+    type = RECT;
+  }
+}
