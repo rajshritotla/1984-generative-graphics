@@ -21,9 +21,9 @@ Code can be run like a normal .pde files assuming Processing application exits.
 
 * Rain Scene (Directory - RainScene3D)
 
-[RainScene3D](RainScene3D/RainScene3DUML.jpeg "RainScene3D")
+![RainScene3D](RainScene3D/RainScene3DUML.jpg "RainScene3D")
 
 
 * Rain Scene With Human Detection (Directory - RainSceneWithHumanDetection)
 
-[RainScene3D](RainSceneWithHumanDetection/RainSceneWithHumanDetectionUML.jpeg "RainSceneWithHumanDetection")
+![RainScene3D](RainSceneWithHumanDetection/RainSceneWithHumanDetectionUML.jpg "RainSceneWithHumanDetection")
