@@ -68,7 +68,7 @@ void setup() {
 
 void settings() {
   // Setting frame size and renderer 
-  size(1200,800);
+  size(1200,800,P3D);
 }
 
  

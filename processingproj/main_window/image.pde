@@ -8,7 +8,7 @@ void display()
   fill(255);
   noStroke();
   photo = loadImage(img_name);
-  photo.resize(80,80);
+  photo.resize((int)size, (int)size);
   image(photo,xPos,yPos);
 }
 }
