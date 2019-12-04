@@ -1,3 +1,5 @@
+//menu bar class 
+//source code from https://discourse.processing.org/t/show-an-desktop-menu-bar/9651
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;

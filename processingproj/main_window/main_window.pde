@@ -3,43 +3,37 @@ import controlP5.*;
 import java.awt.*;
 //detector_window movement;
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
-<<<<<<< HEAD
-PShape square;
-twoDGraphic my2dGraphic; //graphic instance
-=======
 PShape shape;
 Graphic myGraphic; //graphic instance
->>>>>>> a3655c90b31edf1fdae471add6b0e30a58bb44a7
 float xPos; // x position of Graphic
 float yPos; // y position of Graphic
 float zPos;
-float shape_color_r;
-float shape_color_b;
-float shape_color_g;
-float xRot;
-float yRot;
-Button face_detect_button;
-Button fist_detect_button;
-Button body_detect_button;
+float shape_color_r; //color of graphic
+float shape_color_b; //color of graphic
+float shape_color_g; //color of graphic
+float xRot; //x rotation of the graphic
+float yRot; //y rotation of the graphic
+Button face_detect_button; //button for the face detection
+Button fist_detect_button; //button for the fist detection
+Button body_detect_button; //button for the body detection
 Button rain_button;
-Button twoD_button;
-Button threeD_button;
-Button circle_button;
-Button rectangle_button;
-Button sphere_button;
-Button box_button;
-Button enter;
-boolean didUserChooseMovementDetectorType =false; //has the user chosen a thing to detect
+Button twoD_button; //button to render 2d shape
+Button threeD_button; //button to render 3d shape
+Button circle_button; //button to render circle shape
+Button rectangle_button; //button to render rectangle shape
+Button sphere_button; //button to render sphere shape
+Button box_button; //button to render box shape
+Button enter; //button to enter canvas
+boolean didUserChoose =false; //has the user chose from the starting window yet?
 boolean didUserStart = false; //has the user started the application yet
-String detect;
-boolean wants_twoD;
-boolean wants_threeD;
-boolean hasUserChoseDetector = false;
-boolean hasUserChoseTemplate = false;
-boolean hasUserChosenShape = false;
-int type;
-float size;
-boolean closeCam = true;
+String detect; //xml file to use as detection
+boolean wants_twoD; //does user want to render a 2d shape
+boolean wants_threeD; //does user want to render a 3d shape
+boolean hasUserChoseDetector = false; //has the user chose a detector
+boolean hasUserChoseTemplate = false; //has a user chose a template
+boolean hasUserChosenShape = false; //has user chosen a shape
+int type; //which shape to use
+float size; //size of graphic
 void setup() {  
   face_detect_button = new Button("Face", 20, 100, 100, 50);
   enter = new Button("Enter", 1000, 700, 100, 50);
@@ -67,7 +61,7 @@ void settings() {
 
  
 void draw() {  
-  if(didUserChooseMovementDetectorType==false){
+  if(didUserChoose==false){
     face_detect_button.Draw();
     fist_detect_button.Draw();
     body_detect_button.Draw();
@@ -81,7 +75,7 @@ void draw() {
     Text template_string = new Text("Please select template", 20, 200, 200,20);
     template_string.Draw();
     
-    if (wants_twoD)
+    if (wants_twoD) //buttons to show up if user wants 2d shape
     {
       Text twoD_shape_string = new Text("Please select template", 20, 350, 200,20);
       twoD_shape_string.Draw();
@@ -89,7 +83,7 @@ void draw() {
       rectangle_button.Draw();
     }
     
-    if (wants_threeD)
+    if (wants_threeD)//buttons to show up if user wants 3d shape
     {
       Text threeD_shape_string = new Text("Please select shape", 20, 350, 200,20);
       threeD_shape_string.Draw();
@@ -99,31 +93,25 @@ void draw() {
     
   }
   
-  if ( didUserStart == true && didUserChooseMovementDetectorType == false) { 
+  if ( didUserStart == true && didUserChoose == false) { 
     //initated the camera
     String[] args = {"Camera Window"};
     detector_window sa = new detector_window();
     PApplet.runSketch(args, sa);
-    didUserChooseMovementDetectorType=true;    
-    closeCam = true;
+    didUserChoose=true;    
     
   }
-  if(isHandMovementDetectorWindowCreated == false && didUserChooseMovementDetectorType ==true) {
+  if(isHandMovementDetectorWindowCreated == false && didUserChoose ==true) {
     //initates the drawing pad
     background(0, 0, 0);
     textSize(32);
   }
-   if (isHandMovementDetectorWindowCreated == true && didUserChooseMovementDetectorType == true) {
+   if (isHandMovementDetectorWindowCreated == true && didUserChoose == true) {
      //adds graphics to the drawing pad
-<<<<<<< HEAD
-     if (wants_twoD)
-     {
-       my2dGraphic.display();
-=======
+
      if (wants_twoD || wants_threeD)
      {
        myGraphic.display();
->>>>>>> a3655c90b31edf1fdae471add6b0e30a58bb44a7
      }
   }
 }
@@ -131,37 +119,38 @@ void draw() {
 
 void mousePressed()
 {
-  if (face_detect_button.MouseIsOver()) {
+  if (face_detect_button.MouseIsOver()) //rendering xml file for face detection
+  {
     // print some text to the console pane if the button is clicked
     detect = "haarcascade_frontalface_alt.xml";
     hasUserChoseDetector = true;
   }
-  if (body_detect_button.MouseIsOver())
+  if (body_detect_button.MouseIsOver()) //rendering xml file for body detection
   {
     detect = "";
     hasUserChoseDetector = true;
   }
-  if (fist_detect_button.MouseIsOver())
+  if (fist_detect_button.MouseIsOver())//rendering xml file for fist detection
   {
     detect = "fist.xml";
     hasUserChoseDetector = true;
   }
-  if (twoD_button.MouseIsOver())
+  if (twoD_button.MouseIsOver()) //rendering 2d shape
   {
     wants_twoD = true;
   }
-  if (threeD_button.MouseIsOver())
+  if (threeD_button.MouseIsOver()) //rendering 3d shape
   {
     wants_threeD = true;
   }
   
-  if (circle_button.MouseIsOver()&& wants_twoD)
+  if (circle_button.MouseIsOver()&& wants_twoD) //rendering circle shape
   {
     System.out.println("circle");
     type =  ELLIPSE;
     hasUserChosenShape = true;
   }
-  if (rectangle_button.MouseIsOver() && wants_twoD)
+  if (rectangle_button.MouseIsOver() && wants_twoD)  //rendering rectangle shape
   {
     type = RECT;
     hasUserChosenShape = true;
@@ -170,19 +159,19 @@ void mousePressed()
   {
     hasUserChosenShape = true;
   }
-  if(enter.MouseIsOver())
+  if(enter.MouseIsOver()) //entering canvas 2d shape
   {
     if (hasUserChosenShape && hasUserChoseDetector)
     {
       didUserStart = true;
     }
   }
-  if (sphere_button.MouseIsOver() && wants_threeD)
+  if (sphere_button.MouseIsOver() && wants_threeD) //rendering sphere shape
   {
     type = SPHERE;
     hasUserChosenShape = true;
   }
-  if(box_button.MouseIsOver() && wants_threeD)
+  if(box_button.MouseIsOver() && wants_threeD)//rendering box shape
   {
     type = BOX;
     hasUserChosenShape = true;

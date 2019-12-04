@@ -10,7 +10,8 @@ class Text
   float h;      // height of button
   
   // constructor
-  Text(String labelB, float xpos, float ypos, float widthB, float heightB) {
+  Text(String labelB, float xpos, float ypos, float widthB, float heightB) 
+  {
     label = labelB;
     x = xpos;
     y = ypos;
@@ -18,7 +19,8 @@ class Text
     h = heightB;
   }
   
-  void Draw() {
+  void Draw() 
+  {
     fill(128);
     stroke(141);
     rect(x, y, w, h, 10);

@@ -1,5 +1,4 @@
 //menu window class
-//source code comes from 
 import controlP5.*; // import controlP5 library
 ControlP5 controlP5; // controlP5 object
 Menu_bar mp;
