@@ -111,11 +111,6 @@ void draw() {
   }
 }
 
-//KEYBOARD INPUT
-//void keyPressed() {
-// //when uses presses a key
-//    didUserStart = true;
-//}
 
 void mousePressed()
 {
