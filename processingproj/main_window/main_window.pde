@@ -29,6 +29,7 @@ boolean didUserStart = false; //has the user started the application yet
 String detect; //xml file to use as detection
 boolean wants_twoD; //does user want to render a 2d shape
 boolean wants_threeD; //does user want to render a 3d shape
+boolean wants_rainGraphic = false; //does user want to rain graphics
 boolean hasUserChoseDetector = false; //has the user chose a detector
 boolean hasUserChoseTemplate = false; //has a user chose a template
 boolean hasUserChosenShape = false; //has user chosen a shape
@@ -55,8 +56,10 @@ void setup() {
   PApplet.runSketch(args, mw);
 }
 
+
 void settings() {
-  size(1200,800); 
+  // Setting frame size and renderer 
+  size(1200,800,P3D);
 }
 
  
@@ -91,6 +94,11 @@ void draw() {
       box_button.Draw();
     }
     
+    if(wants_rainGraphic)  // initialize rain (StartRaining class) variable
+     {
+       myGraphic.onStartRaining();
+     }
+    
   }
   
   if ( didUserStart == true && didUserChoose == false) { 
@@ -108,11 +116,11 @@ void draw() {
   }
    if (isHandMovementDetectorWindowCreated == true && didUserChoose == true) {
      //adds graphics to the drawing pad
-
-     if (wants_twoD || wants_threeD)
+     if (wants_twoD || wants_threeD || wants_rainGraphic)
      {
        myGraphic.display();
      }
+     
   }
 }
 
@@ -144,9 +152,8 @@ void mousePressed()
     wants_threeD = true;
   }
   
-  if (circle_button.MouseIsOver()&& wants_twoD) //rendering circle shape
+  if (circle_button.MouseIsOver() && wants_twoD) //rendering circle shape
   {
-    System.out.println("circle");
     type =  ELLIPSE;
     hasUserChosenShape = true;
   }
@@ -157,6 +164,7 @@ void mousePressed()
   }
   if (rain_button.MouseIsOver())
   {
+    wants_rainGraphic = true;
     hasUserChosenShape = true;
   }
   if(enter.MouseIsOver()) //entering canvas 2d shape
