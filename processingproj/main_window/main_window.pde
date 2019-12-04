@@ -4,6 +4,8 @@ import java.awt.*;
 //detector_window movement;
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
 PShape shape;
+Image Img;
+String img_name;
 Graphic myGraphic; //graphic instance
 float xPos; // x position of Graphic
 float yPos; // y position of Graphic
@@ -17,6 +19,8 @@ Button face_detect_button; //button for the face detection
 Button fist_detect_button; //button for the fist detection
 Button body_detect_button; //button for the body detection
 Button rain_button;
+Button image_button;
+Button import_button;
 Button twoD_button; //button to render 2d shape
 Button threeD_button; //button to render 3d shape
 Button circle_button; //button to render circle shape
@@ -24,6 +28,7 @@ Button rectangle_button; //button to render rectangle shape
 Button sphere_button; //button to render sphere shape
 Button box_button; //button to render box shape
 Button enter; //button to enter canvas
+Button select_image;
 boolean didUserChoose =false; //has the user chose from the starting window yet?
 boolean didUserStart = false; //has the user started the application yet
 String detect; //xml file to use as detection
@@ -33,6 +38,7 @@ boolean wants_rainGraphic = false; //does user want to rain graphics
 boolean hasUserChoseDetector = false; //has the user chose a detector
 boolean hasUserChoseTemplate = false; //has a user chose a template
 boolean hasUserChosenShape = false; //has user chosen a shape
+boolean wants_image = false;
 int type; //which shape to use
 float size; //size of graphic
 void setup() {  
@@ -43,14 +49,17 @@ void setup() {
   rain_button = new Button("Rain", 20, 250, 100, 50);
   twoD_button = new Button("2D", 130, 250, 100, 50);
   threeD_button = new Button("3D", 240, 250, 100, 50);
+  image_button = new Button("Image", 350, 250, 100, 50);
   circle_button = new Button("Circle", 20, 400, 100, 50);
   rectangle_button = new Button("Rectangle", 130, 400, 100, 50);
   sphere_button = new Button("Sphere", 20, 400, 100, 50);
   box_button = new Button("Box", 130, 400, 100, 50);
+  import_button = new Button("Import", 20, 400, 100, 50);
   //setting up the main app
   smooth();
   noStroke();
   myGraphic = new Graphic(50,530,50,255,255,255,100);
+  Img = new Image();
   String[] args = {"Menu Window"};
   menu_window mw = new menu_window();
   PApplet.runSketch(args, mw);
@@ -59,7 +68,7 @@ void setup() {
 
 void settings() {
   // Setting frame size and renderer 
-  size(1200,800,P3D);
+  size(1200,800);
 }
 
  
@@ -71,6 +80,7 @@ void draw() {
     twoD_button.Draw();
     threeD_button.Draw();
     rain_button.Draw();
+    image_button.Draw();
     enter.Draw();
     Text movement_detect_string = new Text("Please enter detection", 20, 50, 200,20);
     movement_detect_string.Draw();
@@ -92,6 +102,13 @@ void draw() {
       threeD_shape_string.Draw();
       sphere_button.Draw();
       box_button.Draw();
+    }
+    
+    if (wants_image)
+    {
+      Text select_image_string = new Text("Select Image", 20, 350, 200,20);
+      select_image_string.Draw();
+      import_button.Draw();
     }
     
     if(wants_rainGraphic)  // initialize rain (StartRaining class) variable
@@ -119,6 +136,10 @@ void draw() {
      if (wants_twoD || wants_threeD || wants_rainGraphic)
      {
        myGraphic.display();
+     }
+     if (wants_image)
+     {
+       Img.display();
      }
      
   }
@@ -182,6 +203,29 @@ void mousePressed()
   if(box_button.MouseIsOver() && wants_threeD)//rendering box shape
   {
     type = BOX;
+    hasUserChosenShape = true;
+  }
+  if(image_button.MouseIsOver())
+  {
+    wants_image = true;
+  }
+  if(import_button.MouseIsOver() && wants_image)
+  {
+    import_img();
+  }
+}
+
+void import_img() {
+  //importing image
+  selectInput("Select a file to process:", "fileSelected");
+}
+
+void fileSelected(File selection) {
+  if (selection == null) {
+    println("Window was closed or the user hit cancel.");
+  } else {
+    println("User selected " + selection.getAbsolutePath());
+    img_name = selection.getAbsolutePath();
     hasUserChosenShape = true;
   }
 }
