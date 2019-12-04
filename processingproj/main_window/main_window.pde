@@ -3,10 +3,11 @@ import controlP5.*;
 import java.awt.*;
 //detector_window movement;
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
-PShape square;
+PShape shape;
 Graphic myGraphic; //graphic instance
 float xPos; // x position of Graphic
 float yPos; // y position of Graphic
+float zPos;
 float shape_color_r;
 float shape_color_b;
 float shape_color_g;
@@ -21,6 +22,7 @@ Button threeD_button;
 Button circle_button;
 Button rectangle_button;
 Button sphere_button;
+Button box_button;
 Button enter;
 boolean didUserChooseMovementDetectorType =false; //has the user chosen a thing to detect
 boolean didUserStart = false; //has the user started the application yet
@@ -31,7 +33,8 @@ boolean hasUserChoseDetector = false;
 boolean hasUserChoseTemplate = false;
 boolean hasUserChosenShape = false;
 int type;
-
+float size;
+boolean closeCam = true;
 void setup() {  
   face_detect_button = new Button("Face", 20, 100, 100, 50);
   enter = new Button("Enter", 1000, 700, 100, 50);
@@ -43,10 +46,11 @@ void setup() {
   circle_button = new Button("Circle", 20, 400, 100, 50);
   rectangle_button = new Button("Rectangle", 130, 400, 100, 50);
   sphere_button = new Button("Sphere", 20, 400, 100, 50);
+  box_button = new Button("Box", 130, 400, 100, 50);
   //setting up the main app
   smooth();
   noStroke();
-  myGraphic = new Graphic(50,530,255,255,255);
+  myGraphic = new Graphic(50,530,50,255,255,255,100);
   String[] args = {"Menu Window"};
   menu_window mw = new menu_window();
   PApplet.runSketch(args, mw);
@@ -82,9 +86,10 @@ void draw() {
     
     if (wants_threeD)
     {
-      Text threeD_shape_string = new Text("Please select template", 20, 350, 200,20);
+      Text threeD_shape_string = new Text("Please select shape", 20, 350, 200,20);
       threeD_shape_string.Draw();
       sphere_button.Draw();
+      box_button.Draw();
     }
     
   }
@@ -95,6 +100,7 @@ void draw() {
     detector_window sa = new detector_window();
     PApplet.runSketch(args, sa);
     didUserChooseMovementDetectorType=true;    
+    closeCam = true;
     
   }
   if(isHandMovementDetectorWindowCreated == false && didUserChooseMovementDetectorType ==true) {
@@ -104,15 +110,13 @@ void draw() {
   }
    if (isHandMovementDetectorWindowCreated == true && didUserChooseMovementDetectorType == true) {
      //adds graphics to the drawing pad
-     myGraphic.display();
+     if (wants_twoD || wants_threeD)
+     {
+       myGraphic.display();
+     }
   }
 }
 
-//KEYBOARD INPUT
-//void keyPressed() {
-// //when uses presses a key
-//    didUserStart = true;
-//}
 
 void mousePressed()
 {
@@ -140,12 +144,13 @@ void mousePressed()
     wants_threeD = true;
   }
   
-  if (circle_button.MouseIsOver())
+  if (circle_button.MouseIsOver()&& wants_twoD)
   {
+    System.out.println("circle");
     type =  ELLIPSE;
     hasUserChosenShape = true;
   }
-  if (rectangle_button.MouseIsOver())
+  if (rectangle_button.MouseIsOver() && wants_twoD)
   {
     type = RECT;
     hasUserChosenShape = true;
@@ -160,6 +165,16 @@ void mousePressed()
     {
       didUserStart = true;
     }
+  }
+  if (sphere_button.MouseIsOver() && wants_threeD)
+  {
+    type = SPHERE;
+    hasUserChosenShape = true;
+  }
+  if(box_button.MouseIsOver() && wants_threeD)
+  {
+    type = BOX;
+    hasUserChosenShape = true;
   }
 }
 
