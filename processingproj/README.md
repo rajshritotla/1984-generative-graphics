@@ -19,7 +19,7 @@ used on any OS with ease, which is a problem we had in the past.
 - To create the 3D Rain Scene, we referenced the code from [here](https://discourse.processing.org/t/simple-3d-rain-simulation/10834)
 
 # Issues
-- There is a major issue with the Video library is using a Mac with Catalina installed. Because of the new install, all 32 bit applications are deprecation, one of which is the Video Library. A work around this is manually clone the beta version of the library (found [here](https://github.com/processing/processing-video/releases/tag/r6-v2.0-beta4))
+- There is a major issue with the Video library is using a Mac with Catalina installed. Because of the new install, all 32 bit applications are deprecation, one of which is the Video Library. A work around this is to manually clone the beta version of the library (found [here](https://github.com/processing/processing-video/releases/tag/r6-v2.0-beta4))
 and manually install it (in the Mac, directly install it in /Documents/Processing/Libraries). 
 
-**Warning:** There is a lot of external libraries in this library that cannot be detected by Mac so it will be annoying and give you a warning saying that this library cannot be used as Apple cannot verify the library. A way around this is to open every single file, and then manually allow them to open.
+**Warning:** In using MacOSX, There is a lot of external libraries in this library that cannot be detected by Mac so it will be annoying and give you a warning saying that this library cannot be used as Apple cannot verify the library. A way around this is to open every single file, and then manually allow them to open. However, there are almost 300 files so this might take some time
