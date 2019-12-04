@@ -4,7 +4,7 @@ import java.awt.*;
 //detector_window movement;
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
 PShape square;
-Graphic myGraphic; //graphic instance
+twoDGraphic my2dGraphic; //graphic instance
 float xPos; // x position of Graphic
 float yPos; // y position of Graphic
 float shape_color_r;
@@ -21,15 +21,20 @@ Button threeD_button;
 Button circle_button;
 Button rectangle_button;
 Button sphere_button;
+Button enter;
 boolean didUserChooseMovementDetectorType =false; //has the user chosen a thing to detect
 boolean didUserStart = false; //has the user started the application yet
 String detect;
 boolean wants_twoD;
 boolean wants_threeD;
+boolean hasUserChoseDetector = false;
+boolean hasUserChoseTemplate = false;
+boolean hasUserChosenShape = false;
 int type;
 
 void setup() {  
   face_detect_button = new Button("Face", 20, 100, 100, 50);
+  enter = new Button("Enter", 1000, 700, 100, 50);
   fist_detect_button = new Button("Fist", 130, 100, 100, 50);
   body_detect_button = new Button("Body", 240, 100, 100, 50);
   rain_button = new Button("Rain", 20, 250, 100, 50);
@@ -60,7 +65,7 @@ void draw() {
     twoD_button.Draw();
     threeD_button.Draw();
     rain_button.Draw();
-    
+    enter.Draw();
     Text movement_detect_string = new Text("Please enter detection", 20, 50, 200,20);
     movement_detect_string.Draw();
     
@@ -99,29 +104,35 @@ void draw() {
   }
    if (isHandMovementDetectorWindowCreated == true && didUserChooseMovementDetectorType == true) {
      //adds graphics to the drawing pad
-     myGraphic.display();
+     if (wants_twoD)
+     {
+       my2dGraphic.display();
+     }
   }
 }
 
 //KEYBOARD INPUT
-void keyPressed() {
- //when uses presses a key
-    didUserStart = true;
-}
+//void keyPressed() {
+// //when uses presses a key
+//    didUserStart = true;
+//}
 
 void mousePressed()
 {
   if (face_detect_button.MouseIsOver()) {
     // print some text to the console pane if the button is clicked
     detect = "haarcascade_frontalface_alt.xml";
+    hasUserChoseDetector = true;
   }
   if (body_detect_button.MouseIsOver())
   {
     detect = "";
+    hasUserChoseDetector = true;
   }
   if (fist_detect_button.MouseIsOver())
   {
     detect = "fist.xml";
+    hasUserChoseDetector = true;
   }
   if (twoD_button.MouseIsOver())
   {
@@ -135,9 +146,22 @@ void mousePressed()
   if (circle_button.MouseIsOver())
   {
     type =  ELLIPSE;
+    hasUserChosenShape = true;
   }
   if (rectangle_button.MouseIsOver())
   {
     type = RECT;
+    hasUserChosenShape = true;
+  }
+  if (rain_button.MouseIsOver())
+  {
+    hasUserChosenShape = true;
+  }
+  if(enter.MouseIsOver())
+  {
+    if (hasUserChosenShape && hasUserChoseDetector)
+    {
+      didUserStart = true;
+    }
   }
 }

@@ -1,8 +1,8 @@
-class Graphic {
+class twoDGraphic {
   float speed = 2;
   boolean moveLeft, moveRight, moveUp, moveDown = false;
  
-  Graphic(float x_in, float y_in,float r_color_in, float g_color_in,float b_color_in) {
+  twoDGraphic(float x_in, float y_in,float r_color_in, float g_color_in,float b_color_in) {
     //constructor for the graphic
     xPos = x_in;
     yPos = y_in; 
