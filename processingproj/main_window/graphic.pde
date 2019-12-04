@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-class twoDGraphic {
-  float speed = 2;
-  boolean moveLeft, moveRight, moveUp, moveDown = false;
- 
-  twoDGraphic(float x_in, float y_in,float r_color_in, float g_color_in,float b_color_in) {
-=======
-//graphic class
 
 class Graphic {
   float speed = 2;
   boolean moveLeft, moveRight, moveUp, moveDown = false;
  
   Graphic(float x_in, float y_in, float z_in, float r_color_in, float g_color_in,float b_color_in, float size_in) {
->>>>>>> a3655c90b31edf1fdae471add6b0e30a58bb44a7
     //constructor for the graphic
     xPos = x_in;
     yPos = y_in; 
@@ -35,13 +26,15 @@ class Graphic {
       shape.rotateY(yRot);
     }
     if (wants_threeD)
+    //3d shape creation
     {
-      if (type == BOX)
+      directionalLight(shape_color_r, shape_color_g, shape_color_b, 0, -1, 0); //colored light for the 3d object
+      if (type == BOX) //case if type of shape is box
       {
         shape = createShape(type, size, size, size);
         shape.translate(xPos, yPos, 50);
       }
-      else if (type == SPHERE)
+      else if (type == SPHERE) //case if type of shape is sphere
       {
         shape = createShape(type, size);
         shape.translate(xPos, yPos, 50);
