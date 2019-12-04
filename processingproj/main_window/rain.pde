@@ -1,5 +1,30 @@
-// RAIN SYSTEM
+// 3D RAIN SYSTEM
 
+RainSystem rs; // Downpour
+SplashSystem ss; // Droplet hits the ground, and splashed 
+PVector gravity = new PVector(0, 0.9, 0);
+
+// MAIN CLASS to start generating 3D rain graphics
+class StartRaining {
+
+   StartRaining(){
+     System.out.println("rain called");
+     stroke(255);
+     rs = new RainSystem(30); // 30 drops per frame
+     ss = new SplashSystem();
+   }
+   
+   void rain() {
+     
+     background(0);
+     rotateX(0); // Nice view from this angle
+     rs.run(); // Pouring
+     ss.run(); // Splashing
+    }
+
+}
+
+// Rain droplets
 class Droplet{
   PVector pos; // Keep track droplet position
   PVector vel; // droplet velocity
@@ -29,7 +54,7 @@ class Droplet{
   }
 }
 
-
+// To generate the random rain effect
 class Splash {
   PVector pos;
   PVector vel;
@@ -65,7 +90,7 @@ class Splash {
   }
 }
 
-
+// generates multiple rain droplets
 class RainSystem {
   ArrayList<Droplet> droplets;
   int f;
@@ -89,6 +114,7 @@ class RainSystem {
     }
   }
 }
+
 class SplashSystem {
   ArrayList<Splash> splashes;
   SplashSystem() {
@@ -111,31 +137,4 @@ class SplashSystem {
       splashes.add(new Splash(x, y, z, size));
     }
   }
-}
-
-
-RainSystem rs; // Downpour
-SplashSystem ss; // Droplet hits the ground, and splashed 
-PVector gravity = new PVector(0, 0.9, 0);
-
-class StartRaining {
-
-   StartRaining(){
-     stroke(255);
-     rs = new RainSystem(30); // 30 drops per frame
-     ss = new SplashSystem();
-     
-     stroke(255);
-     rs = new RainSystem(30); // 30 drops per frame
-     ss = new SplashSystem();
-   
-   }
-   
-   void rain() {
-     background(0);
-     rotateX(0); // Nice view from this angle
-     rs.run(); // Pouring
-     ss.run(); // Splashing
-    }
-
 }
