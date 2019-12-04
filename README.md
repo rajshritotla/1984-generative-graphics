@@ -9,35 +9,35 @@ The application is now being developed using [Processing](https://processing.org
 
 ### Why Processing? (source from website https://processing.org)
 
-Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology. Processing is widely being used for learning and prototyping.
+Processing is a flexible software sketchbook and language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy in technology. It is widely used for learning and prototyping.
 
-* Free to download and open source
-* Interactive programs with 2D, 3D, PDF, or SVG output
-* OpenGL integration for accelerated 2D and 3D
-* For GNU/Linux, Mac OS X, Windows, Android, and ARM
-* Over 100 libraries extend the core software
-* Well documented, with many books available
+* Free to download and open source.
+* Interactive programs with 2D, 3D, PDF, or SVG output.
+* OpenGL integration for accelerated 2D and 3D.
+* For GNU/Linux, Mac OS X, Windows, Android, and ARM.
+* Over 100 libraries that extend the core software.
+* Well documented, with many books available.
 
 
 ### Why we switched techology?
 
-* Earlier approach had lot of dependencies thus lot of additional installations required
-* High hardware requirements
-* Complex to use and learn as compared to Processing
-* Compatability issue between opnepose and openframeworks
-* Processing is ready to use, one just need to download the application
+* Earlier approach had lot of dependencies and thus a lot of additional installations required.
+* High hardware requirements.
+* Complex to use and learn as compared to Processing.
+* Compatability issue between openpose and openframeworks.
+* Processing is ready to use, one just needs to download the application.
 
 
 ### Technologies Used in Old Code
 * [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
 * C++
-* [openframeowrks](https://openframeworks.cc/about/)
+* [openframeworks](https://openframeworks.cc/about/)
 
 Code and documentation could be found in old directory
 
 
 ### How to run
 
-Double click the files with extension .pde in the directory "processingproj" and click the run/play (green) button when the file open in Processing Window. Code output and Graphics window will automatically start. 
+Double click the files with extension .pde in the directory "processingproj" and click the run/play (green) button when the file open in Processing Window. A gui with different sliding bars to customize the graphic and A startup window will appear with selections that the user can choose from, such as shapes, template, and which movement to detect. After the user has chosen the necessary information, the graphics window will appear along with a window displaying the camera and what it is detecting. 
 
-
+## For more information about the code, code structure, the source material that we used, and issues that we faced, please consult the README.md in the "processingproj" folder.

@@ -1,8 +1,8 @@
 # About Directory
 
-This directory have the previous approach of developing the project. We were working with [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) (to get actor's coordinates) and [openframeowrks](https://openframeworks.cc/about/) (to develop application).
+This directory has the previous approach of developing the project. We were working with [openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) (to get the actor's coordinates) and [openframeworks](https://openframeworks.cc/about/) (to develop the application).
 
-Due to complexity and hardware requirements of these technologies we decided to develop the project using ["Processing"](https://processing.org/overview/), recently we found this technology. Processing could help us achieve the goal quicker and in cleaner way.
+Due to the complexity and hardware requirements of these technologies, we decided to develop the project using ["Processing"](https://processing.org/overview/). Processing could help us achieve the goal quicker and in cleaner way.
 
 # Technologies Used
 
@@ -10,17 +10,17 @@ Due to complexity and hardware requirements of these technologies we decided to 
 
 [GitHub Source](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
 
-openpose is used in the project to determine the human being coordinates. Currently we are using it with webcam to successfully generate coordinates of using COCO model, which is a trained model available in repository.
+Openpose is used in the project to determine the human coordinates. Currently we are using it with the webcam to successfully generate coordinates using COCO model, which is a trained model available in repository.
 
-Note: Though the links are directly sourced from openpose official repository, its suggestable to confirm the link again from openpose docs
+Note: Though the links are directly sourced from the openpose official repository, it is suggested to confirm the link again from the Openpose docs.
 
-#### Get coordinates using openpose
+#### Get coordinates using Openpose
 
-Assumption : openpose and dependencies successfully installed
+Assumption : Openpose and dependencies successfully installed
 
 To get coordinates using openpose:
 
-Through command line interface run the application with flags set as:
+Through command line interface, run the application with flags set as:
 
 
 ```
@@ -33,7 +33,7 @@ OpenPoseDemo.exe : The application which generates the coordinates
 
 --model_pose COCO : Speicifies to run COCO model
 
-Note: This is not a mandatory flag, but due to GPU and drivers constraints this flag was required. One could try without this flag if it doesn't run then they can use this flag. To know more about this read the documentation on openpose github link.
+Note: This is not a mandatory flag, but due to GPU and drivers constraints, this flag was required. One could try without this flag. If it doesn't run, then they can use this flag. To know more about this read the documentation on the openpose github link.
 
 -write_json output/ : It will write the coordinates in JSON format in a folder name as "output". Folder name could be any name, not required specifically to be "output". There is one JSON file generated for every frame.
 
@@ -42,54 +42,11 @@ Note: This is not a mandatory flag, but due to GPU and drivers constraints this 
 [Openpose prequisite documentation](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/prerequisites.md)
 
 
-#### openpose Installation Requirement and Procedure (Windows OS)
+#### openpose Installation Requirement and Procedure 
 
-For whole procedure and other OS visit their github documentation:
+For the whole procedure for UNIX, MacOS, and WindowsOS visit their github documentation:
 
 [Openpose installation instructions](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/installation.md)
-
-Windows OS users can directly download the binary files from "Release" section and try running the OpenPoseDemo.exe. They can also generate their own binary files using CMake.
-
-Installations done by us for Windows:
-
-NVIDIA driver updates
-
-Cuda Driver
-
-cuDNN
-
-CMAke
-
-Visual Studio 2017
-
-
-#### OpenPose Binary File Generation Overview (Windows OS)
-
-Assuming the required drivers are installed and CUDA/cuDNN driver files are manually placed at correct location as specified in openpose docs; CMake and VS2017 are installed.
-
-In CMake Gui:
-
-1. Where is the source code : Points to the openpose folder cloned by github:
-
-```
-git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose
-```
-
-
-2. Where to build the binaries : Points to a folder specified by you, in my case I named it as "build"
-
-3. Click Configure
-
-Note: Configuring done should be shown in last else there is some issue
-
-Note: Platform selected by me : x64
-
-4. Click Generate
-
-5. OpenProject
-
-Assuming it opens in VS 2017, choose "Release" [instead Debug on top bar (where there are options for run)] and hit green button.
-
 
 
 ## C++
@@ -120,12 +77,8 @@ E.g. "c comp" is incorrect, "ccomp" is correct
 3. Do add compiler's bin path to environment
 
 
-#### IDE 
 
-Visual Studio Code
-
-
-#### Configure VS Code and mingw compiler
+#### Configure VS Code and mingw compiler (for WindowsOS)
 
 To run C++ scipts, every project we need to do configuration. 
 
