@@ -36,10 +36,11 @@ public class detector_window extends PApplet {
       xPos = faces[i].x; //changing x coordinates of ellipses
       yPos = faces[i].x; //changing y coordinates of ellipses
     }
+    /*
     if (!closeCam)
     {
       video.stop();
-    }
+    }*/
   }
   void captureEvent(Capture c) {
     c.read();
