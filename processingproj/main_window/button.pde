@@ -26,6 +26,7 @@ class Button {
   }
   
   boolean MouseIsOver() {
+    //indicator to help produce actions when bButtons are clicked
     if (mouseX > x && mouseX < (x + w) && mouseY > y && mouseY < (y + h)) {
       return true;
     }

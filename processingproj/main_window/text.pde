@@ -1,6 +1,9 @@
+//class for the text boxes
+//based on the graphic class
+
 class Text
 {
-   String label; // button label
+  String label; // button label
   float x;      // top left corner x position
   float y;      // top left corner y position
   float w;      // width of button

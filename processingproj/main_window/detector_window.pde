@@ -1,19 +1,23 @@
+//camera window
+//source code comes from https://github.com/atduskgreg/opencv-processing/blob/master/examples/LiveCamTest/LiveCamTest.pde
+
 import gab.opencv.*;
 import processing.video.*;
 
 public class detector_window extends PApplet {
 
-  Capture video;
-  OpenCV opencv;
+  Capture video; //camera object
+  OpenCV opencv; //openCV object
   
   public void settings() {
+    //dimensions of the window
     size(640, 480);
   }
 
   void setup() {     
     video = new Capture(this, 640/2, 480/2); 
     opencv = new OpenCV(this, 640/2, 480/2);
-    opencv.loadCascade(detect);    //initally detecting face, will add more
+    opencv.loadCascade(detect);    //loading the cascade xml depending on which body part we want to detect
     video.start();
   }
 
@@ -21,7 +25,7 @@ public class detector_window extends PApplet {
     isHandMovementDetectorWindowCreated = true;    
     surface.setLocation(0,50);
     scale(2);
-    opencv.loadImage(video);
+    opencv.loadImage(video); //integrating opencv with the video
     image(video, 0, 0 );
     noFill();
     stroke(0, 255, 0);
@@ -32,8 +36,13 @@ public class detector_window extends PApplet {
       xPos = faces[i].x; //changing x coordinates of ellipses
       yPos = faces[i].x; //changing y coordinates of ellipses
     }
+    if (!closeCam)
+    {
+      video.stop();
+    }
   }
   void captureEvent(Capture c) {
     c.read();
   }
+  
 }
