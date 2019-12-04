@@ -7,13 +7,13 @@ public class detector_window extends PApplet {
   OpenCV opencv;
   
   public void settings() {
-    size(640, 480, P3D);
+    size(640, 480);
   }
 
   void setup() {     
     video = new Capture(this, 640/2, 480/2); 
     opencv = new OpenCV(this, 640/2, 480/2);
-    opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);    //initally detecting face, will add more
+    opencv.loadCascade(detect);    //initally detecting face, will add more
     video.start();
   }
 
