@@ -8,14 +8,12 @@ PVector gravity = new PVector(0, 0.9, 0);
 class StartRaining {
 
    StartRaining(){
-     System.out.println("rain called");
      stroke(255);
      rs = new RainSystem(30); // 30 drops per frame
      ss = new SplashSystem();
    }
    
    void rain() {
-     
      background(0);
      rotateX(0); // Nice view from this angle
      rs.run(); // Pouring
