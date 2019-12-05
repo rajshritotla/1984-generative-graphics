@@ -14,8 +14,8 @@ class StartRaining {
    }
    
    void rain() {
-     background(0);
-     rotateX(0); // Nice view from this angle
+     background(color(shape_color_r, shape_color_g, shape_color_b));
+     rotateX(xRot); // Nice view from this angle
      rs.run(); // Pouring
      ss.run(); // Splashing
     }
