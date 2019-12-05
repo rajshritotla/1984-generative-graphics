@@ -9,13 +9,14 @@ class StartRaining {
 
    StartRaining(){
      stroke(255);
+     xRot = 0;  // by default rain angle set to be 0
      rs = new RainSystem(30); // 30 drops per frame
      ss = new SplashSystem();
    }
    
    void rain() {
      background(color(shape_color_r, shape_color_g, shape_color_b));
-     rotateX(xRot); // Nice view from this angle
+     rotateX(xRot); // Set value from whichever angle you get nice view
      rs.run(); // Pouring
      ss.run(); // Splashing
     }
