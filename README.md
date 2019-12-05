@@ -65,4 +65,6 @@ Code and documentation could be found in old directory
 
 This is a high level UML to get a quick insight of the project.
 
+Directory: processingproj\main_window
+
 ![1984GenerativeGrpahicsProjectUML](processingproj/main_windowUML.png "main_windowUML")
