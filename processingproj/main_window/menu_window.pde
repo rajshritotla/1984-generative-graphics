@@ -12,12 +12,13 @@ void setup() {
  
  controlP5 = new ControlP5(this);
  //slider for the gui
-  controlP5.addSlider("slider_r").setPosition(20, 100).setRange(0,255).setValue(100); //slider for red
-  controlP5.addSlider("slider_g").setPosition(20,130).setRange(0,255).setValue(100);//slider for green
+  controlP5.addSlider("slider_r").setPosition(20, 120).setRange(0,255).setValue(100); //slider for red
+  controlP5.addSlider("slider_g").setPosition(20,140).setRange(0,255).setValue(100);//slider for green
   controlP5.addSlider("slider_b").setPosition(20,160).setRange(0,255).setValue(100); //slider for blue
-  controlP5.addSlider("size").setPosition(20,190).setRange(0,500).setValue(100); //slider for size
-  controlP5.addSlider("x_rotation").setPosition(20,220).setRange(0,255).setValue(100); //slider for x rotation
-  controlP5.addSlider("y_rotation").setPosition(20,250).setRange(0,255).setValue(100);//slider for y rotation
+  controlP5.addSlider("size").setPosition(20,180).setRange(0,500).setValue(100); //slider for size
+  controlP5.addSlider("x_rotation").setPosition(20,200).setRange(0,255).setValue(100); //slider for x rotation
+  controlP5.addSlider("y_rotation").setPosition(20,220).setRange(0,255).setValue(100);//slider for y rotation
+  controlP5.addSlider("z_rotation").setPosition(20,240).setRange(0,255).setValue(100);//slider for y rotation
   file = controlP5.addDropdownList("File").setPosition(20, 10);
   save = controlP5.addDropdownList("Save").setPosition(150, 10);
   controlP5.addButton("Exit").setPosition(280, 10).setColorBackground(color(60));
@@ -47,7 +48,7 @@ void draw() {
 }
 void settings()
 {
-  size(400, 300,P3D);
+  size(370, 300,P3D);
 }
   void controlEvent(ControlEvent theEvent) {
   /* events triggered by controllers are automatically forwarolEvent theEvent) {
@@ -91,6 +92,9 @@ void settings()
     //action for y rotation slider
     if(theEvent.getController().getName()=="y_rotation") {
       yRot= theEvent.getController().getValue();
+    }
+    if(theEvent.getController().getName()=="z_rotation") {
+      zRot= theEvent.getController().getValue();
     }
     if(theEvent.getController().getName()=="Exit") {
       exit();

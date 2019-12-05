@@ -15,6 +15,7 @@ float shape_color_b; //color of graphic
 float shape_color_g; //color of graphic
 float xRot; //x rotation of the graphic
 float yRot; //y rotation of the graphic
+float zRot; //z rotation of the graphic
 Button face_detect_button; //button for the face detection
 Button fist_detect_button; //button for the fist detection
 Button body_detect_button; //button for the body detection
@@ -94,6 +95,7 @@ void draw() {
       twoD_shape_string.Draw();
       circle_button.Draw();
       rectangle_button.Draw();
+      custom_button.Draw();
     }
     
     if (wants_threeD)//buttons to show up if user wants 3d shape
