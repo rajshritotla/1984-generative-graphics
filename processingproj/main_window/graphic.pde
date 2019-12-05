@@ -44,13 +44,20 @@ class Graphic {
     {
       if (type == BOX) //case if type of shape is box
       {
-        background(0);
+        background(0);  // default background
         lights();
-        fill(shape_color_r, shape_color_g, shape_color_b);
-        noStroke();
+        // color to be filled, controlled by UI
+        fill(shape_color_r, shape_color_g, shape_color_b);  
+        //  border color
+        noStroke();  
         pushMatrix();        
-        translate(xPos, yPos, 50);  
-        box(size/3);
+        translate(xPos, yPos, 50);
+        // to rotate along x axis
+        rotateX(xRot);    
+        // to rotate along y axis
+        rotateY(yRot);    
+        // generates box
+        box(size/3);      
         popMatrix();
       }
       else if (type == SPHERE) //case if type of shape is sphere
@@ -58,10 +65,16 @@ class Graphic {
         background(0);
         lights();
         noFill();
+        // border color, controlled by UI
         stroke(color(shape_color_r, shape_color_g, shape_color_b));
         pushMatrix();
         translate(xPos, yPos, 50);  
-        sphere(size/3);
+        // to rotate along x axis
+        rotateX(xRot);    
+        // to rotate along y axis
+        rotateY(yRot);    
+        // creates sphere
+        sphere(size/3);  
         popMatrix();
       }
 
