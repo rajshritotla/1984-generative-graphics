@@ -38,6 +38,25 @@ Code and documentation could be found in old directory
 
 ### How to run
 
-Double click the files with extension .pde in the directory "processingproj" and click the run/play (green) button when the file open in Processing Window. A gui with different sliding bars to customize the graphic and A startup window will appear with selections that the user can choose from, such as shapes, template, and which movement to detect. After the user has chosen the necessary information, the graphics window will appear along with a window displaying the camera and what it is detecting. 
+1. [Download](https://processing.org/download/) Processing.
 
-## For more information about the code, code structure, the source material that we used, and issues that we faced, please consult the README.md in the "processingproj" folder.
+2. Install the above listed libraries.
+
+    To install library, in IDE go to: 
+    Sketch -> Import Libarary -> Add Library
+    
+    If any supporting library for the application is missing, errors could be seen in the IDE console. In that case install those libraries as well.
+
+3. Copy "fist.xml" file to:
+
+    ..\Processing\libraries\opencv_processing\library\cascade-files\
+
+    File could be found in "main_window" directory. It detects actor's fist.
+
+4. Double click on the file "main_window.pde" in the directory "processingproj/main_window" and run using play(green) button in IDE. 
+
+5. Applictaion should start with a gui with different sliding bars to customize the graphic and a startup window will appear with selections that the user can choose from, such as shapes, template, and which movement to detect. After the user has chosen the necessary information, the graphics window will appear along with a window displaying the camera and what it is detecting. 
+
+    Happy playing!!
+
+### For more information about the code, code structure, the source material that we used, and issues that we faced, please consult the README.md in the "processingproj" folder.
