@@ -95,7 +95,6 @@ void draw() {
       twoD_shape_string.Draw();
       circle_button.Draw();
       rectangle_button.Draw();
-      custom_button.Draw();
     }
     
     if (wants_threeD)//buttons to show up if user wants 3d shape
