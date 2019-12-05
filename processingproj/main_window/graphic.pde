@@ -51,17 +51,6 @@ class Graphic {
         fill(shape_color_r, shape_color_g, shape_color_b);  
         //  border color
         noStroke();  
-        pushMatrix();        
-        translate(xPos, yPos, 50);
-        // to rotate along x axis
-        rotateX(xRot);    
-        // to rotate along y axis
-        rotateY(yRot); 
-        //to rotate along the z axis
-        rotateZ(zRot);
-        // generates box
-        box(size/3);      
-        popMatrix();
       }
       else if (type == SPHERE) //case if type of shape is sphere
       {
@@ -70,18 +59,19 @@ class Graphic {
         noFill();
         // border color, controlled by UI
         stroke(color(shape_color_r, shape_color_g, shape_color_b));
-        pushMatrix();
-        translate(xPos, yPos, 50);  
-        // to rotate along x axis
-        rotateX(xRot);    
-        // to rotate along y axis
-        rotateY(yRot);
-        //to rotate along the z axis
-        rotateZ(zRot);
-        // creates sphere
-        sphere(size/3);  
-        popMatrix();
       }
+         pushMatrix();
+        translate(xPos, yPos, 50);  
+        // creates sphere
+        shape = createShape(type, size/3); 
+        // to rotate along x axis
+        shape.rotateX(xRot);
+        // to rotate along y axis
+        shape.rotateY(yRot);
+        //to rotate along z axis
+        //shape.rotate(zRot, 0.0, 0.0, 1.0);
+        shape(shape, 10, 10);
+        popMatrix();
 
     }
     
