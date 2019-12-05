@@ -68,8 +68,8 @@ class Graphic {
         shape.rotateX(xRot);
         // to rotate along y axis
         shape.rotateY(yRot);
-        //to rotate along z axis
-        //shape.rotate(zRot, 0.0, 0.0, 1.0);
+        to rotate along z axis
+        shape.rotate(zRot, 0.0, 0.0, 1.0);
         shape(shape, 10, 10);
         popMatrix();
 
