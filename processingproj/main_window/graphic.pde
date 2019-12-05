@@ -42,7 +42,6 @@ class Graphic {
     if (wants_threeD)
     //3d shape creation
     {
-      //directionalLight(shape_color_r, shape_color_g, shape_color_b, 0, -1, 0); //colored light for the 3d object
       if (type == BOX) //case if type of shape is box
       {
         background(0);
