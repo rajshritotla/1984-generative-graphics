@@ -60,3 +60,9 @@ Code and documentation could be found in old directory
     Happy playing!!
 
 ### For more information about the code, code structure, the source material that we used, and issues that we faced, please consult the README.md in the "processingproj" folder.
+
+### Project UML
+
+This is a high level UML to get a quick insight of the project.
+
+![1984GenerativeGrpahicsProjectUML](processingproj/main_windowUML.png "main_windowUML")

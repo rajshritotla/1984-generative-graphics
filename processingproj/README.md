@@ -45,3 +45,9 @@ and manually install it (in the Mac, directly install it in /Documents/Processin
 
 
 **Warning:** In using MacOSX, There is a lot of external libraries in this library that cannot be detected by Mac so it will be annoying and give you a warning saying that this library cannot be used as Apple cannot verify the library. A way around this is to open every single file, and then manually allow them to open. However, there are almost 300 files so this might take some time
+
+# UML
+
+This is a high level UML to get a quick insight of the project.
+
+![1984GenerativeGrpahicsProjectUML](main_windowUML.png "main_windowUML")
