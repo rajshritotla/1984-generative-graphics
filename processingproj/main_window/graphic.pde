@@ -47,8 +47,8 @@ class Graphic {
       {
         background(0);
         lights();
-        noFill();
-        stroke(255);
+        fill(shape_color_r, shape_color_g, shape_color_b);
+        noStroke();
         pushMatrix();        
         translate(xPos, yPos, 50);  
         box(size/3);
@@ -59,7 +59,7 @@ class Graphic {
         background(0);
         lights();
         noFill();
-        stroke(255);
+        stroke(color(shape_color_r, shape_color_g, shape_color_b));
         pushMatrix();
         translate(xPos, yPos, 50);  
         sphere(size/3);
