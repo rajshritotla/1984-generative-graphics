@@ -1,4 +1,4 @@
-
+import static javax.swing.JOptionPane.*;
 class Graphic {
   float speed = 2;
   boolean moveLeft, moveRight, moveUp, moveDown = false;
@@ -13,6 +13,7 @@ class Graphic {
     shape_color_b = b_color_in;
     size = size_in;
   }
+    
   
   void onStartRaining() {
     // if user wants rain initialize the variable only in that case
@@ -55,7 +56,9 @@ class Graphic {
         // to rotate along x axis
         rotateX(xRot);    
         // to rotate along y axis
-        rotateY(yRot);    
+        rotateY(yRot); 
+        //to rotate along the z axis
+        rotateZ(zRot);
         // generates box
         box(size/3);      
         popMatrix();
@@ -72,7 +75,9 @@ class Graphic {
         // to rotate along x axis
         rotateX(xRot);    
         // to rotate along y axis
-        rotateY(yRot);    
+        rotateY(yRot);
+        //to rotate along the z axis
+        rotateZ(zRot);
         // creates sphere
         sphere(size/3);  
         popMatrix();
