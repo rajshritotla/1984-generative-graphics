@@ -59,7 +59,7 @@ Code and documentation could be found in old directory
 
     Happy playing!!
 
-### For more information about the code, code structure, the source material that we used, and issues that we faced, please consult the README.md in the "processingproj" folder.
+#### *For more information about the code, code structure, the source material that we used, and issues that we faced, please consult the README.md in the "processingproj" folder.*
 
 ### Project UML
 
