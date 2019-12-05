@@ -11,7 +11,7 @@ public class detector_window extends PApplet {
   
   public void settings() {
     //dimensions of the window
-    size(640, 480);
+    size(640, 480,P3D);
   }
 
   void setup() {     
