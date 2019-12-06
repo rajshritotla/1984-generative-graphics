@@ -10,5 +10,7 @@ void display()
   photo = loadImage(img_name);
   photo.resize((int)size, (int)size);
   image(photo,xPos,yPos);
+  rotateX(xRot);
+  rotateY(yRot);
 }
 }

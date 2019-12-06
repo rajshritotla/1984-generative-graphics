@@ -24,6 +24,7 @@ Button image_button;
 Button import_button;
 Button twoD_button; //button to render 2d shape
 Button threeD_button; //button to render 3d shape
+Button custom_button; //button for custom shapes
 Button circle_button; //button to render circle shape
 Button rectangle_button; //button to render rectangle shape
 Button sphere_button; //button to render sphere shape
@@ -51,6 +52,7 @@ void setup() {
   twoD_button = new Button("2D", 130, 250, 100, 50);
   threeD_button = new Button("3D", 240, 250, 100, 50);
   image_button = new Button("Image", 350, 250, 100, 50);
+  custom_button = new Button("Custom", 460, 250, 100, 50);
   circle_button = new Button("Circle", 20, 400, 100, 50);
   rectangle_button = new Button("Rectangle", 130, 400, 100, 50);
   sphere_button = new Button("Sphere", 20, 400, 100, 50);
@@ -82,6 +84,7 @@ void draw() {
     threeD_button.Draw();
     rain_button.Draw();
     image_button.Draw();
+    custom_button.Draw();
     enter.Draw();
     Text movement_detect_string = new Text("Please enter detection", 20, 50, 200,20);
     movement_detect_string.Draw();
