@@ -44,7 +44,7 @@ Code and documentation available on "oldcode" branch in "old" directory
 
 * OpenCV for processing: [github repository](https://github.com/atduskgreg/opencv-processing) [documentation](http://atduskgreg.github.io/opencv-processing/reference/)
 * PShape: [documentation](https://processing.github.io/processing-javadocs/core/processing/core/PShape.html)
-* Video for processing: [github repository](https://github.com/processing/processing-video). In order for the program to work, use [Video Library Version 2.0-beta4)[(https://github.com/processing/processing-video/releases)
+* Video for processing: [github repository](https://github.com/processing/processing-video). In order for the program to work, use [Video Library Version 2.0-beta4](https://github.com/processing/processing-video/releases)
 
 
 ##### Libraries Installed in Processing Library Manager
