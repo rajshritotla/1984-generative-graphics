@@ -38,9 +38,19 @@ Code and documentation available on "oldcode" branch in "old" directory
 
 
 # Libraries Used
+
 * OpenCV for processing: [github repository](https://github.com/atduskgreg/opencv-processing) [documentation](http://atduskgreg.github.io/opencv-processing/reference/)
 * PShape: [documentation](https://processing.github.io/processing-javadocs/core/processing/core/PShape.html)
 * Video for processing: [github repository](https://github.com/processing/processing-video)
+
+
+##### Expected names in Processing Contribution Manager
+
+* Camera3D 
+* ControlP5
+* OpenCV for processing
+* PShape
+* Video
 
 
 # To run
@@ -66,7 +76,7 @@ Code and documentation available on "oldcode" branch in "old" directory
 
 Note: Currently you need to re-run the application everytime to generate the different graphic
 
-    Happy playing!!
+Happy playing!!
 
 
 # Source Code
