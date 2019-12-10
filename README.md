@@ -1,5 +1,8 @@
 # 1984-generative-graphics
-This project involves combining conventional projection mapping technology in combination with generative-computer graphics and computational vision, in order to create a completely fluid and projected environment for actors in plays. This is a desktop application for the streamlining of generative graphics creation essentially a User Interface tool that will be used to track actor movements on stage and generate graphics to augment the scene or actually create entirely new interactive environments. A primary goal for this novel software tool is that it allows for the quick alteration of perimeters in generative algorithms, enabling theatrical scenic designers to edit and design in real time during rehearsal, thus creating the conditions for a more fully integrated and collaborative design process with the director, actors, and other designers. 
+This project aims to allow non-technical theatre director to generate computer graphics environment in a theatrical production. 
+
+# Solution
+This desktop application provides a user interface with the ability to track actor movements on stage and generate graphics that the actors can interact with. A primary goal for this tool is the ability for the quick alteration of variables in generative algorithms, enabling theatrical designers to edit and design in real time during rehearsal, thus creating the conditions for a more fully integrated and collaborative design process with the director, actors, and other designers. 
 
 
 # Technologies Used
@@ -41,10 +44,10 @@ Code and documentation available on "oldcode" branch in "old" directory
 
 * OpenCV for processing: [github repository](https://github.com/atduskgreg/opencv-processing) [documentation](http://atduskgreg.github.io/opencv-processing/reference/)
 * PShape: [documentation](https://processing.github.io/processing-javadocs/core/processing/core/PShape.html)
-* Video for processing: [github repository](https://github.com/processing/processing-video)
+* Video for processing: [github repository](https://github.com/processing/processing-video). In order for the program to work, use [Video Library Version 2.0-beta4)[(https://github.com/processing/processing-video/releases)
 
 
-##### Expected names in Processing Contribution Manager
+##### Libraries Installed in Processing Library Manager
 
 * Camera3D 
 * ControlP5
@@ -72,14 +75,14 @@ Code and documentation available on "oldcode" branch in "old" directory
 
 4. Double click on the file "**main_window.pde**" in the directory "**main_window**" and run using play(green) button in IDE. 
 
-5. Applictaion should start with a gui with different sliding bars to customize the graphic and a startup window will appear with selections that the user can choose from, such as shapes, template, and which movement to detect. After the user has chosen the necessary information, the graphics window will appear along with a window displaying the camera and what it is detecting.
+5. Application should start with a gui with different sliding bars to customize the graphic and a startup window will appear with selections that the user can choose from, such as shapes, template, and which movement to detect. After the user has chosen the necessary information, the graphics window will appear along with a window displaying the camera and what it is detecting.
 
 Note: Currently you need to re-run the application everytime to generate the different graphic
 
 Happy playing!!
 
 
-# Source Code
+# Reference Code
 
 * On the OpenCV for processing github repository, they included many examples for users to test the libraries. One of the main examples that we used and took code from is this [example](https://github.com/atduskgreg/opencv-processing/tree/master/examples/LiveCamTest).
 * To create the shapes, images, and custom shapes feature, we referenced to the code in the PShape documentaton found [here](https://processing.org/tutorials/pshape/).
