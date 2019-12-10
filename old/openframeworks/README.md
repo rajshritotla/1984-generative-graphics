@@ -1,1 +1,0 @@
-This directory contains some working code developed for this project using [openframeowrks](https://openframeworks.cc/about/)(to develop application) and [qt](https://openframeworks.cc/setup/qtcreator/)
