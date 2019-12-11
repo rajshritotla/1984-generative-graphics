@@ -6,7 +6,7 @@ class Button {
   float y;      // top left corner y position
   float w;      // width of button
   float h;      // height of button
-  
+  int col = 218;
   // constructor
   Button(String labelB, float xpos, float ypos, float widthB, float heightB) {
     label = labelB;
@@ -17,7 +17,7 @@ class Button {
   }
   
   void Draw() {
-    fill(218);
+    fill(col);
     stroke(141);
     rect(x, y, w, h, 10);
     textAlign(CENTER, CENTER);
@@ -28,6 +28,8 @@ class Button {
   boolean MouseIsOver() {
     //indicator to help produce actions when bButtons are clicked
     if (mouseX > x && mouseX < (x + w) && mouseY > y && mouseY < (y + h)) {
+      //indicator that button is clicked
+      col=65;
       return true;
     }
     return false;

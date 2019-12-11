@@ -30,11 +30,14 @@ class Graphic {
     {
       noStroke();
       background(0);
-      shape = createShape(type, xPos, yPos, size, size);
+      //shape.rotateX(xRot);
+      //shape.rotateY(yRot);
+       shape = createShape(type, xPos, yPos, size, size);
       shape.setFill(color(shape_color_r, shape_color_g,shape_color_b));
+      //giving rotations
+      translate(width/2, height/2);
+     rotate(radians(zRot));
       shape(shape, 10, 10);
-      shape.rotateX(xRot);
-      shape.rotateY(yRot);
     }
     
     
