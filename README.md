@@ -49,10 +49,7 @@ Code and documentation available on "oldcode" branch in "old" directory
 
 ##### Libraries Installed in Processing Library Manager
 
-* Camera3D 
-* ControlP5
 * OpenCV for processing
-* PShape
 * Video
 
 
