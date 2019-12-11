@@ -1,6 +1,7 @@
 import processing.opengl.*;
 import controlP5.*;
 import java.awt.*;
+import static javax.swing.JOptionPane.*;
 //detector_window movement;
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
 PShape shape;
@@ -227,6 +228,9 @@ void import_img() {
 void fileSelected(File selection) {
   if (selection == null) {
     println("Window was closed or the user hit cancel.");
+    showMessageDialog(null, "No image selected.", 
+    "Alert", ERROR_MESSAGE);
+    import_img();
   } else {
     println("User selected " + selection.getAbsolutePath());
     img_name = selection.getAbsolutePath();
