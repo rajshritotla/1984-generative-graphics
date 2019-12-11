@@ -94,7 +94,7 @@ Happy playing!!
 * There is a major issue with the Video library is using a Mac with Catalina installed. Because of the new install, all 32 bit applications are deprecation, one of which is the Video Library. A work around this is to manually clone the beta version of the library (found [here](https://github.com/processing/processing-video/releases/tag/r6-v2.0-beta4))
 and manually install it (in the Mac, directly install it in /Documents/Processing/Libraries). 
 
-* Body detection may not work using normal webcam
+* Body detection may not work using normal webcam, due to the sizing of the webcam being very limited
 
 
 **Warning:** In using MacOSX, There is a lot of external libraries in this library that cannot be detected by Mac so it could be annoying and give you a warning saying that this library cannot be used as Apple cannot verify the library. A way around this is to open every single file, and then manually allow them to open. However, there are almost 300 files so this might take some time
