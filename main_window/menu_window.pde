@@ -1,6 +1,5 @@
 //menu window class
-import controlP5.*; // import controlP5 library
-ControlP5 controlP5; // controlP5 object
+import controlP5.*; // import controlP5 library // controlP5 object
 DropdownList file;
 DropdownList save;
 DropdownList exit;

@@ -1,7 +1,7 @@
 import processing.opengl.*;
 import controlP5.*;
 import java.awt.*;
-import static javax.swing.JOptionPane.*;
+ControlP5 controlP5;
 //detector_window movement;
 boolean isHandMovementDetectorWindowCreated = false ; //checks if camera has been initiated
 PShape shape;
@@ -25,7 +25,6 @@ Button image_button;
 Button import_button;
 Button twoD_button; //button to render 2d shape
 Button threeD_button; //button to render 3d shape
-Button custom_button; //button for custom shapes
 Button circle_button; //button to render circle shape
 Button rectangle_button; //button to render rectangle shape
 Button sphere_button; //button to render sphere shape
@@ -44,6 +43,12 @@ boolean hasUserChosenShape = false; //has user chosen a shape
 boolean wants_image = false;
 int type; //which shape to use
 float size; //size of graphic
+int num_vertex;
+int[] xvertex;
+int[] yvertex;
+ControlGroup messageBox;
+int messageBoxResult = -1;
+String messageBoxString = "";
 void setup() {  
   face_detect_button = new Button("Face", 20, 100, 100, 50);
   enter = new Button("Enter", 1000, 700, 100, 50);
@@ -53,7 +58,6 @@ void setup() {
   twoD_button = new Button("2D", 130, 250, 100, 50);
   threeD_button = new Button("3D", 240, 250, 100, 50);
   image_button = new Button("Image", 350, 250, 100, 50);
-  custom_button = new Button("Custom", 460, 250, 100, 50);
   circle_button = new Button("Circle", 20, 400, 100, 50);
   rectangle_button = new Button("Rectangle", 130, 400, 100, 50);
   sphere_button = new Button("Sphere", 20, 400, 100, 50);
@@ -85,7 +89,6 @@ void draw() {
     threeD_button.Draw();
     rain_button.Draw();
     image_button.Draw();
-    custom_button.Draw();
     enter.Draw();
     Text movement_detect_string = new Text("Please enter detection", 20, 50, 200,20);
     movement_detect_string.Draw();
@@ -146,7 +149,6 @@ void draw() {
      {
        Img.display();
      }
-     
   }
 }
 
