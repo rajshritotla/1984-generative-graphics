@@ -90,6 +90,19 @@ class Graphic {
     }
   }
   
-  /*______________________________________________________________________________________________________________________________________*/
+ void customDisplay(int num_vertices, int[] xVertices, int[] yVertices)
+ {
+   shape = createShape();
+   shape.beginShape();
+  shape.fill(0, 0, 255);
+  shape.noStroke();
+  for (int i = 0; i < num_vertices; i++)
+  {
+    shape.vertex(xVertices[i], yVertices[i]);
+    shape.endShape(CLOSE);
+  }
+  shape(shape, 25, 25);
+   
+ }
     
 }
