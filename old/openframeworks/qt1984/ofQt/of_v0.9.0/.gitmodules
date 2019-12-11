@@ -1,3 +1,0 @@
-[submodule "apps/projectGenerator/projectGeneratorSimple"]
-	path = apps/projectGenerator
-	url = https://github.com/openframeworks/projectGenerator.git
