@@ -16,9 +16,9 @@ void setup() {
   controlP5.addSlider("slider_g").setPosition(20,140).setRange(0,255).setValue(100);//slider for green
   controlP5.addSlider("slider_b").setPosition(20,160).setRange(0,255).setValue(100); //slider for blue
   controlP5.addSlider("size").setPosition(20,180).setRange(0,500).setValue(100); //slider for size
-  controlP5.addSlider("x_rotation").setPosition(20,200).setRange(0,255).setValue(100); //slider for x rotation
-  controlP5.addSlider("y_rotation").setPosition(20,220).setRange(0,255).setValue(100);//slider for y rotation
-  controlP5.addSlider("z_rotation").setPosition(20,240).setRange(0,255).setValue(100);//slider for y rotation
+  controlP5.addSlider("x_rotation").setPosition(20,200).setRange(0,360).setValue(100); //slider for x rotation
+  controlP5.addSlider("y_rotation").setPosition(20,220).setRange(0,360).setValue(100);//slider for y rotation
+  controlP5.addSlider("z_rotation").setPosition(20,240).setRange(0,360).setValue(100);//slider for y rotation
   file = controlP5.addDropdownList("File").setPosition(20, 10);
   save = controlP5.addDropdownList("Save").setPosition(150, 10);
   controlP5.addButton("Exit").setPosition(280, 10).setColorBackground(color(60));
