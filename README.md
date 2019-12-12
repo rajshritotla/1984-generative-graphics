@@ -93,9 +93,13 @@ Happy playing!!
 
 * There is a major issue with the Video library is using a Mac with Catalina installed. Because of the new install, all 32 bit applications are deprecated, one of which is the Video Library. A work around this is to manually clone the beta version of the library (found [here](https://github.com/processing/processing-video/releases/tag/r6-v2.0-beta4))
 and manually install it (in the Mac, directly install it in /Documents/Processing/Libraries). 
+* On the menu part, the selections on the top of the screens are not working except Exit. We put this there so that the next user will know what features should be included and give them an easier in implementing these features
+* Exiting the applications is sometimes glitchy, as the application may throw some "Thread Death" error. 
 **Warning:** In using MacOSX, There is a lot of external libraries in this library that cannot be detected by Mac so it could be annoying and give you a warning saying that this library cannot be used as Apple cannot verify the library. A way around this is to open every single file, and then manually allow them to open. However, there are almost 300 files so this might take some time.
 
-* Body detection may not work using normal webcam, due to the sizing of the webcam being very limited
+* Body/Fist detection may not work using normal webcam, due to the sizing of the webcam being very limited
+* Facial detection does not work properly when there are more than one face on the camera
+* You have to get really close to the camera for it to work properly. For testing, we usually are sitting down in a chair with our laptop on a desk, and the camera works properly in this way.
 
 
 # Project UML
@@ -103,3 +107,12 @@ and manually install it (in the Mac, directly install it in /Documents/Processin
 This is a high level UML to get a quick insight of the project.
 
 ![1984GenerativeGrpahicsProjectUML](main_windowUML.png "main_windowUML")
+
+* **Button**: This is the file in which the button will be generated from.
+* **main_window**: This file contains the main window of the project, which includes the canvas and which the graphic is being created on as well as the initial starting window that includes the place where the user will choose their preference
+* **detector_window** This file contains the window in which the camera will be rendered on. It uses the OpenCV library to detect the face, fist, and fullbody of the user. 
+* **graphics** This file contains the class of the graphics being generated, such as 2d graphics, 3d graphics, as well as the Rain feature that we implemented.
+* **image** This file contains the class of the image graphic being generated, the graphic coming from an imported image
+* **menu_window** This file contains the window in which the menu window is rendered on. It contains the ControlP5 controllers in which allows the user for more customization of the graphics as well as exiting/saving the graphics
+* **rain** This is the file in which the rain sequence will be generated. 
+* **text** This is the file in which the text box will be generated
