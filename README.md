@@ -51,6 +51,7 @@ Code and documentation available on "oldcode" branch in "old" directory
 
 * OpenCV for processing
 * Video
+* Control P5
 
 
 # To run
