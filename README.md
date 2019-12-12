@@ -103,6 +103,7 @@ and manually install it (in the Mac, directly install it in /Documents/Processin
 * Body/Fist detection may not work using normal webcam, due to the sizing of the webcam being very limited
 * Facial detection does not work properly when there are more than one face on the camera
 * You have to get really close to the camera for it to work properly. For testing, we usually are sitting down in a chair with our laptop on a desk, and the camera works properly in this way.
+* A major difficulty using this application on a VM is the access webcam, as VM's may not be allowed for access to the webcam.
 
 
 # Project UML
