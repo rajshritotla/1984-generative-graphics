@@ -64,6 +64,7 @@ Code and documentation available on "oldcode" branch in "old" directory
     Sketch -> Import Libarary -> Add Library
     
     If any supporting library for the application is missing, errors could be seen in the IDE console. In that case install those libraries as well.
+    **WARNING** For the access on the webcamera to work, you MUST allow camera access for Processing. On Macs, go to security and privacy, then under the selection bar on the left panel, select camera. Check the box for Processing and the application should have access to the camera now. 
 
 3. Copy "fist.xml" file to:
 
