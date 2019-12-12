@@ -163,7 +163,7 @@ void mousePressed()
   }
   if (body_detect_button.MouseIsOver()) //rendering xml file for body detection
   {
-    detect = "";
+    detect = "haarcascade_fullbody.xml";
     hasUserChoseDetector = true;
   }
   if (fist_detect_button.MouseIsOver())//rendering xml file for fist detection
