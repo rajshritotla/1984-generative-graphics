@@ -163,7 +163,7 @@ void mousePressed()
   }
   if (body_detect_button.MouseIsOver()) //rendering xml file for body detection
   {
-    detect = "";
+    detect = "haarcascade_fullbody.xml";
     hasUserChoseDetector = true;
   }
   if (fist_detect_button.MouseIsOver())//rendering xml file for fist detection
@@ -228,13 +228,13 @@ void import_img() {
 }
 
 void fileSelected(File selection) {
-  if (selection == null) {
+  if (selection == null) { //if user did not import a picture
     println("Window was closed or the user hit cancel.");
     showMessageDialog(null, "No image selected.", 
     "Alert", ERROR_MESSAGE);
     import_img();
   } else {
-    println("User selected " + selection.getAbsolutePath());
+    println("User selected " + selection.getAbsolutePath()); //setting imported pictures to the graphic
     img_name = selection.getAbsolutePath();
     hasUserChosenShape = true;
   }
