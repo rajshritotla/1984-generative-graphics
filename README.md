@@ -87,6 +87,9 @@ Happy playing!!
 * To create the Menu Bar, we referenced code from a forum page found [here](https://forum.processing.org/two/discussion/12202/is-there-a-way-to-associate-a-menu-bar-with-the-sketch-frame).
 * To create the 3D Rain Scene, we referenced the code from [here](https://discourse.processing.org/t/simple-3d-rain-simulation/10834)
 * To create the 3D shapes {BOX, SPHERE}, we referenced code from [here](https://processing.org/examples/primitives3d.html)
+* To create the message box dialogue, we referenced code from [here](https://forum.processing.org/two/discussion/4764/how-to-make-a-popup-window)
+* To import an image, we referenced code from [here](https://stackoverflow.com/questions/16302332/how-could-i-choose-one-particular-file-to-load-with-loadstrings)
+* To use image, we reference code from [here](https://processing.org/reference/PImage.html)
 
 
 # Issues
