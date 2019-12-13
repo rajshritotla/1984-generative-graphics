@@ -67,9 +67,9 @@ Code and documentation available on "oldcode" branch in "old" directory
 * For ControlP5 libraries, it is the ControlP5 libray by Andreas Schlegl <br/>
 
 To check if Library was correctly installed, go to Sketch -> Import Library. If the library was installed, in should be listed when Import Library was selected.
-     
+     ![1984GenerativeGrpahicsProjectUML](importedlibraries.png "main_windowUML")
 If any supporting library for the application is missing, errors could be seen in the IDE console. In that case install those libraries as well.<br/>
-    
+
 **WARNING**: For the access on the webcamera to work, you MUST allow camera access for Processing.
 * On Macs, go to security and privacy, then under the selection bar on the left panel, select camera. Check the box for Processing and the application should have access to the camera now. 
     * if you have Catalina, there might be some problems with the Video library. A workaround it is listed below under ISSUES.
