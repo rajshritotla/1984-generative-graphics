@@ -63,8 +63,9 @@ Code and documentation available on "oldcode" branch in "old" directory
     To install library, in IDE go to: 
     Sketch -> Import Libarary -> Add Library
     
-    If any supporting library for the application is missing, errors could be seen in the IDE console. In that case install those libraries as well.
-    **WARNING** For the access on the webcamera to work, you MUST allow camera access for Processing. On Macs, go to security and privacy, then under the selection bar on the left panel, select camera. Check the box for Processing and the application should have access to the camera now. 
+    If any supporting library for the application is missing, errors could be seen in the IDE console. In that case install those libraries as well.<br/>
+        **WARNING**: For the access on the webcamera to work, you MUST allow camera access for Processing. On Macs, go to security and privacy, then under the selection bar on the left panel, select camera. Check the box for Processing and the application should have access to the camera now. 
+* if you are using a Mac Catalina, there might be some problems with the Video library. A workaround it is listed below under ISSUES.
 
 3. Copy "fist.xml" file to:
 
@@ -99,8 +100,8 @@ Happy playing!!
 * There is a major issue with the Video library is using a Mac with Catalina installed. Because of the new install, all 32 bit applications are deprecated, one of which is the Video Library. A work around this is to manually clone the beta version of the library (found [here](https://github.com/processing/processing-video/releases/tag/r6-v2.0-beta4))
 and manually install it (in the Mac, directly install it in /Documents/Processing/Libraries). 
 * On the menu part, the selections on the top of the screens are not working except Exit. We put this there so that the next user will know what features should be included and give them an easier in implementing these features
-* Exiting the applications is sometimes glitchy, as the application may throw some "Thread Death" error. 
-**Warning:** In using MacOSX, There is a lot of external libraries in this library that cannot be detected by Mac so it could be annoying and give you a warning saying that this library cannot be used as Apple cannot verify the library. A way around this is to open every single file, and then manually allow them to open. However, there are almost 300 files so this might take some time.
+* Exiting the applications is sometimes glitchy, as the application may throw some "Thread Death" error.<br/> 
+ **Warning:** In using MacOSX, There is a lot of external libraries in this library that cannot be detected by Mac so it could be annoying and give you a warning saying that this library cannot be used as Apple cannot verify the library. A way around this is to open every single file, and then manually allow them to open. However, there are almost 300 files so this might take some time.
 
 * Body/Fist detection may not work using normal webcam, due to the sizing of the webcam being very limited
 * Facial detection does not work properly when there are more than one face on the camera
